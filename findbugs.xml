@@ -1,0 +1,48 @@
+<FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="findbugsplugin.xsd" pluginid="cn.edu.sjtu.stap.wq"
+	provider="STAP wq" website="http://stap.sjtu.edu.cn">
+	
+	<!-- ************************* Detectors ***************************************** -->
+	<!-- Qi Wang -->
+	<Detector class="cn.edu.sjtu.stap.detector.scala.WrongEqualsOrHashcodeDetector" reports="DEFINE_EQUALS_NO_HASHCODE,WRONG_EQUALS_SIG,WRONG_HASHCODE_SIG,DEFINE_HASHCODE_NO_EQUALS" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.OptionCompNullDetector" reports="COMPARE_OPTION_NULL" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.UseVarDefineHashCodeDetector" reports="USE_VAR_DEFINE_HASHCODE" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.NilListInMatchDetector" reports="NIL_LIST_IN_MATCH" />	
+	<Detector class="cn.edu.sjtu.stap.detector.scala.MultiAssignWithPatternDetector" reports="MUTIL_ASSIGN_VIA_PATTERN" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.HangingVarOrConstDetector" reports="HANING_VAR_OR_CONST,NO_RETURN_TYPE_FOR_FUNC" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.EmptyRangeDetector" reports="EMPTY_RANGE" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.DeadCodeReturnDetector" reports="RELUCANT_RETURN" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.UseImmutableInLoopDetector" reports="USE_IMMUT_COLLECTION_IN_LOOP" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.CompareAssignedValueDetector" reports="COMP_ASSIGNED_VALUE" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.TypeEraseDetector" reports="TYPE_ERASE_IN_MATCH" />
+	<Detector class="cn.edu.sjtu.stap.detector.scala.FirstLetterLowerInMatchDetector" reports="FIRST_LETTER_LOWER_IN_MATCH,STR_UNDERLINE_IN_MATCH" />
+
+	<!-- Yudi Zheng -->
+	<Detector class="cn.edu.sjtu.se.yudiZheng.UnreachableCodeDetector" speed="fast" reports="UNREACHABLE" />
+	<Detector class="cn.edu.sjtu.se.yudiZheng.CaseClassInheritanceDetector" speed="fast" reports="CASE_INHERIT" />
+
+	<!-- ************************* Bug Patterns ***************************************** -->
+	<!-- Qi Wang -->
+	<BugPattern type="USE_IMMUT_COLLECTION_IN_LOOP" abbrev="CO" category="PERFORMANCE" />
+	<BugPattern type="HANING_VAR_OR_CONST" abbrev="EXPR" category="STYLE" />
+	<BugPattern type="EMPTY_RANGE" abbrev="FC" category="BAD_PRACTICE" />
+	<BugPattern type="RELUCANT_RETURN" abbrev="FUNC" category="STYLE" />
+	<BugPattern type="NO_RETURN_TYPE_FOR_FUNC" abbrev="FUNC" category="SCALA_MISUSE" />
+	<BugPattern type="DEFINE_EQUALS_NO_HASHCODE" abbrev="CD" category="BAD_PRACTICE" />
+	<BugPattern type="DEFINE_HASHCODE_NO_EQUALS" abbrev="CD" category="BAD_PRACTICE" />
+	<BugPattern type="USE_VAR_DEFINE_HASHCODE" abbrev="CD" category="BAD_PRACTICE" />
+	<BugPattern type="WRONG_EQUALS_SIG" abbrev="CD" category="BAD_PRACTICE" />
+	<BugPattern type="WRONG_HASHCODE_SIG" abbrev="CD" category="BAD_PRACTICE" />
+	<BugPattern type="NIL_LIST_IN_MATCH" abbrev="MAT" category="BAD_PRACTICE" />
+	<BugPattern type="STR_UNDERLINE_IN_MATCH" abbrev="MAT" category="BAD_PRACTICE" />
+	<BugPattern type="FIRST_LETTER_LOWER_IN_MATCH" abbrev="MAT" category="BAD_PRACTICE" />
+	<BugPattern type="COMPARE_OPTION_NULL" abbrev="VCOMP" category="SCALA_MISUSE" />
+	<BugPattern type="COMP_ASSIGNED_VALUE" abbrev="VCOMP" category="SCALA_MISUSE" />
+	<BugPattern type="MUTIL_ASSIGN_VIA_PATTERN" abbrev="TE" category="SCALA_VERSION_SEPCIFIC" />
+	<BugPattern type="TYPE_ERASE_IN_MATCH" abbrev="TE" category="SCALA_VERSION_SEPCIFIC" />
+	
+	<!-- Yudi Zheng -->
+	<BugPattern abbrev="SCALA" type="UNREACHABLE" category="CORRECTNESS" />
+	<BugPattern abbrev="SCALA" type="CASE_INHERIT" category="BAD_PRACTICE" />
+	
+</FindbugsPlugin>
