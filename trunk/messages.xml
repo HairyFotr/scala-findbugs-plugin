@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="messagecollection.xsd">
+	<Plugin>
+		<ShortDescription>FindBugs Plugin for Scala</ShortDescription>
+		<Details>Provides detectors to detector Scala bug patterns.</Details>
+	</Plugin>
+	
+	<!-- ************************* Detectors ***************************************** -->
+	
+	<!-- Qi Wang -->
+	<Detector class="cn.edu.sjtu.stap.detector.scala.WrongEqualsOrHashcodeDetector">
+		<Details></Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.OptionCompNullDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.UseVarDefineHashCodeDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.NilListInMatchDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.MultiAssignWithPatternDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.HangingVarOrConstDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.EmptyRangeDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.DeadCodeReturnDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.UseImmutableInLoopDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.CompareAssignedValueDetector">
+		<Details>Find comparing the return value of assignment with other value  </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.TypeEraseDetector">
+		<Details> </Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.stap.detector.scala.FirstLetterLowerInMatchDetector">
+		<Details> </Details>
+	</Detector>
+	
+	<!-- Yudi Zheng -->
+	<Detector class="cn.edu.sjtu.se.yudiZheng.UnreachableCodeDetector">
+		<Details>
+		<![CDATA[
+		<p> Checks for unreachable code inside a method. NOTE THAT unreachable code can be generated using BCEL or ASM. </p> 
+		]]>
+		</Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.se.yudiZheng.CaseClassInheritanceDetector">
+		<Details>
+		<![CDATA[
+		<p> Checks for inheritance of case classes. This can cause buggy behavior while comparing two instances from these kind of case classes. </p> 
+		]]>
+		</Details>
+	</Detector>
+	
+	
+	
+	<!-- ************************* Bug Patterns ***************************************** -->
+	
+	<!-- Qi Wang -->
+	<BugPattern type="USE_IMMUT_COLLECTION_IN_LOOP">
+		<ShortDescription>在循环中对不可变容器添加元素</ShortDescription>
+		<LongDescription>在循环中对不可变容器添加元素</LongDescription>
+		<Details> <![CDATA[ <p>scala默认使用的集合类型是immutable的，在一个循环中大量次数对immutable集合添加元素性能将低于使用mutable的集合来完成相同的功能。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="HANING_VAR_OR_CONST">
+		<ShortDescription>没有被使用的常量、变量 (非函数)</ShortDescription>
+		<LongDescription>没有被使用的常量、变量 (非函数)</LongDescription>
+		<Details> <![CDATA[ <p>Scala中允许一个常量、变量放在一行中，不参与任何表达式。如果这些东西被不小心混入到其他表达式中将会引起bug。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="EMPTY_RANGE">
+		<ShortDescription>递减参数生成的Range为空</ShortDescription>
+		<LongDescription>递减参数生成的Range为空</LongDescription>
+		<Details> <![CDATA[ <p>"1 to 4 = Range(1,2,3,4)"，但是"-1 to -4 = Range()"。递减参数生成的Range为空，运行时不会报错，程序有可能由于没有处理（交换起止值）这种特殊情况而造成逻辑错误（迭代没有进行）。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="RELUCANT_RETURN">
+		<ShortDescription>无分支函数多重return使得代码冗余</ShortDescription>
+		<LongDescription>无分支函数多重return使得代码冗余</LongDescription>
+		<Details> <![CDATA[ <p>在一个无分支的函数定义中包含多重return，造成第一个return的后续代码无效。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="NO_RETURN_TYPE_FOR_FUNC">
+		<ShortDescription>方法体有返回值，定义方法时没有在方法体前加=号</ShortDescription>
+		<LongDescription>方法体有返回值，定义方法时没有在方法体前加=号</LongDescription>
+		<Details> <![CDATA[ <p>如果去掉方法体前面的等号，那么方法的结果必定是Unit，方法体里不管返回什么都成立。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="DEFINE_EQUALS_NO_HASHCODE">
+		<ShortDescription>定义equals,但没有同时定义hashCode</ShortDescription>
+		<LongDescription>定义equals,但没有同时定义hashCode</LongDescription>
+		<Details> <![CDATA[ <p>定义equals,但没有同时定义hashCode</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="DEFINE_HASHCODE_NO_EQUALS">
+		<ShortDescription>定义hashCode,但没有同时定义equals</ShortDescription>
+		<LongDescription>定义hashCode,但没有同时定义equals</LongDescription>
+		<Details> <![CDATA[ <p>定义hashCode,但没有同时定义equals</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="USE_VAR_DEFINE_HASHCODE">
+		<ShortDescription>使用可变的字段定义类的hashCode方法</ShortDescription>
+		<LongDescription>使用可变的字段定义类的hashCode方法</LongDescription>
+		<Details> <![CDATA[ <p>基于hash的集合类型(如HashSet)中，该集合通过对象的hashCode()计算出的hash值来存储和查找该对象，使用可变的字段定义hashCode方法，储存进集合中后，如果可变字段改变，将计算出新的hash值，因此将无法从该集合中获取该对象</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="WRONG_EQUALS_SIG">
+		<ShortDescription>使用错误的签名重载类的equals方法</ShortDescription>
+		<LongDescription>使用错误的签名重载类的equals方法</LongDescription>
+		<Details> <![CDATA[ <p>scala中用于比较两个对象的相等的equals方法的签名为   def equals(o:Any),使用错误的签名(参数类型不使用Any),只是相当于为类添加了一个方法, 对象cast为父类对象后，调用equals方法不会动态绑定到新定义的equals方法，从而引起错误。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="WRONG_HASHCODE_SIG">
+		<ShortDescription>hashCode函数签名错误</ShortDescription>
+		<LongDescription>hashCode函数签名错误</LongDescription>
+		<Details> <![CDATA[ <p>hashCode函数签名错误。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="NIL_LIST_IN_MATCH">
+		<ShortDescription>Nil和List()同时出现在match匹配</ShortDescription>
+		<LongDescription>Nil和List()同时出现在match匹配</LongDescription>
+		<Details> <![CDATA[ <p>List()与Nil相等。在Match匹配中Nil可置于List()之前。List()匹配时将先与Nil匹配。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="STR_UNDERLINE_IN_MATCH">
+		<ShortDescription>scala中匹配表达式与下划线(_)出错</ShortDescription>
+		<LongDescription>scala中匹配表达式与下划线(_)出错</LongDescription>
+		<Details> <![CDATA[ <p>case _ 程序员可能误输入成 case "_"。</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="FIRST_LETTER_LOWER_IN_MATCH">
+		<ShortDescription>在模式匹配中匹配第一个字母小写的对象或变量</ShortDescription>
+		<LongDescription>在模式匹配中匹配第一个字母小写的对象或变量</LongDescription>
+		<Details> <![CDATA[ <p>第一个字母小写，在模式匹配中将作为匹配变量，能匹配任何值.</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="COMPARE_OPTION_NULL">
+		<ShortDescription>将返回Option类型的函数的返回值和null进行比较</ShortDescription>
+		<LongDescription>将返回Option类型的函数的返回值和null进行比较</LongDescription>
+		<Details> <![CDATA[ <p>受java编程习惯的影响，从map中取值，先判断是否为null.在scala中，map的返回值为Option类型，如果不存在对应的键值，则返回None.None和null比较永远为false，因此引入错误.</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="COMP_ASSIGNED_VALUE">
+		<ShortDescription>将赋值 表达式的值用于判断</ShortDescription>
+		<LongDescription>将赋值 表达式的值用于判断</LongDescription>
+		<Details> <![CDATA[ <p>在scala中,赋值表达式的值为Unit 所以java的一些习惯，使用赋值后的值进行比较，将引入错误.</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="MUTIL_ASSIGN_VIA_PATTERN">
+		<ShortDescription>使用模式匹配进行赋值</ShortDescription>
+		<LongDescription>使用模式匹配进行赋值</LongDescription>
+		<Details> <![CDATA[ <p>通过模式匹配进行赋值，不进行类型检查,编译时不报错，运行时出错</p> ]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="TYPE_ERASE_IN_MATCH">
+		<ShortDescription>泛型参数类型擦除</ShortDescription>
+		<LongDescription>泛型参数类型擦除</LongDescription>
+		<Details> <![CDATA[ <p>Scala中只有数组类型在编译时被保留，其他数据结构的泛型参数会被擦除。使用带参数类型的数据结构进行模式匹配时，将只匹配类型，而不匹配参数类型.</p> ]]>
+		</Details>
+	</BugPattern>
+	
+	<!-- Yudi Zheng -->
+	<BugPattern type="UNREACHABLE">
+		<ShortDescription> Unreachable code </ShortDescription>
+		<LongDescription> Unreachable code detected. </LongDescription>
+		<Details>Unreachable code is detected inside this method. Analysis based on control flow graph might now be applied in these code, e.g. ASM analyzer. </Details>
+	</BugPattern>
+	<BugPattern type="CASE_INHERIT">
+		<ShortDescription> Case class inheritance </ShortDescription>
+		<LongDescription> A case class inherites another case class. </LongDescription>
+		<Details><![CDATA[<p>Case class inheritance will introduce buggy behavior. If you compare two instances from two case classes with a relationship of inheritance, they will definitely be different, while in some cases you expect a same result. ]]> </Details>
+	</BugPattern>
+	
+	
+	<!-- ************************* Bug Codes ***************************************** -->
+	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
+	<BugCode abbrev="TE">Type erasion</BugCode>
+	<BugCode abbrev="MAT">Pattern match</BugCode>
+	<BugCode abbrev="FUNC">Function</BugCode>
+	<BugCode abbrev="CD">Class Definition</BugCode>
+	<BugCode abbrev="CO">Collection operation</BugCode>
+	<BugCode abbrev="EXPR">Expression</BugCode>
+	<BugCode abbrev="FC">Function call</BugCode>
+	<BugCode abbrev="SCALA">Programming mistake in Scala</BugCode>
+</MessageCollection>
