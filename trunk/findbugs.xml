@@ -86,7 +86,9 @@
 	<!-- #17 Zilong Wang -->
 	<Detector class="cn.edu.sjtu.se.zilongWang.CircularDependenciesDetector" speed="fast" reports="CIRCULAR_DEPENDENCY" hidden="false"  />	     
         
-	
+	<!-- #18 Yintian Wang -->
+	<Detector class="cn.edu.sjtu.se.yintianWang.FindSameBranchCode" speed="fast"
+                    reports="SCALA_SBC_SAME_IFBRANCH_CODE,SCALA_SBC_SAME_MATCHBRANCH_CODE"/>
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -172,6 +174,12 @@
 	
 	<!-- #17 Zilong Wang -->
 	<BugPattern abbrev="SCALA" type="CIRCULAR_DEPENDENCY" category="Dodgy" />
+	
+	<!-- #18 Yintian Wang -->
+	<BugPattern abbrev="SCALA_SBC" type="SCALA_SBC_SAME_IFBRANCH_CODE"
+		category="STYLE"/>
+    <BugPattern abbrev="SCALA_SBC" type="SCALA_SBC_SAME_MATCHBRANCH_CODE"
+		category="STYLE"/>
 	 
 </FindbugsPlugin>
 	
