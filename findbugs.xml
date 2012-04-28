@@ -1,6 +1,6 @@
 <FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="findbugsplugin.xsd" pluginid="cn.edu.sjtu.stap.wq"
-	provider="SE@SJTU" website="http://se.sjtu.edu.cn">
+	xsi:noNamespaceSchemaLocation="findbugsplugin.xsd" pluginid="cn.edu.sjtu.se"
+	provider="SEers@SJTU" website="http://se.sjtu.edu.cn">
 	
 	<!-- ************************* Detectors ***************************************** -->
 	<!-- #1 Qi Wang -->
@@ -29,7 +29,10 @@
 		speed="fast"
 		reports="SCALA_CO_COMPARETO_NON_INT_RETURN,SCALA_EQ_COMPARETO_USE_OBJECT_EQUALS" />
 		
-		
+	<!-- #4 Shuang Qiu -->
+	<Detector class="cn.edu.sjtu.se.shuangQiu.PartialInitializedObjectDetector" speed="fast"
+		reports="PartialInitialized" />
+  
 	
 	
 	
@@ -67,6 +70,9 @@
 		category="BAD_PRACTICE" />
 	<BugPattern abbrev="SCALA_Eq" type="SCALA_EQ_COMPARETO_USE_OBJECT_EQUALS"
 		category="BAD_PRACTICE" />
+		
+	<!-- #4 Qiu Shuang -->
+	<BugPattern abbrev="PO" type="PartialInitialized" category="STYLE" />
 	
 	
 </FindbugsPlugin>

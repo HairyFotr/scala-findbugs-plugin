@@ -78,6 +78,30 @@
 		</Details>
 	</Detector>
 	
+	<!-- #4 Shuang Qiu -->
+	<Detector class="cn.edu.sjtu.se.shuangQiu.PartialInitializedObjectDetector">
+    	<Details>
+			<![CDATA[
+				<p> This detector finds unordered initialization sequence. </p>
+				<p>
+					Consider the following inherent hierarchy:
+  					<code>
+    					public class Base{
+        					public Base() { foo(); }
+        					public void foo() {};
+    					}
+
+    					public class Sub extends Base{
+        					public Sub() {};
+        					@Override
+        					public void foo() {};
+    					}
+  					</code>
+				Now the test code <code> Sub s = new Sub(); </code> constructor of <code>Base</code> will in fact invoke <code>foo()</code> of class <code>Sub</code> though object <code>s</code> is partially initialized.
+				</p>
+			]]>
+    	</Details>
+  </Detector>
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -269,6 +293,33 @@
     </Details>
 	</BugPattern>
 	
+	<!-- #4 Shuang Qiu -->
+	<BugPattern type="PartialInitialized" category="STYLE">
+    <ShortDescription>Object initialization out of order.</ShortDescription>
+    <LongDescription>Method of partially initialized sub-class object is invoked inside constructor of base class.</LongDescription>
+    <Details>
+	<![CDATA[
+		<p> This detector finds unordered initialization sequence. </p>
+		<p>
+		Consider the following inherent hierarchy:
+  			<code>
+    			public class Base{
+        			public Base() { foo(); }
+        			public void foo() {};
+    			}
+
+    			public class Sub extends Base{
+        			public Sub() {};
+        			@Override
+        			public void foo() {};
+    			}
+  			</code>
+		Now the test code <code> Sub s = new Sub(); </code> constructor of <code>Base</code> will in fact invoke <code>foo()</code> of class <code>Sub</code> though object <code>s</code> is partially initialized.
+		</p>
+	]]>
+    </Details>
+  </BugPattern>
+	
 	
 	
 	
@@ -293,6 +344,9 @@
 	</BugCode>
 	<BugCode abbrev="SCALA_Eq">Problems with implementation of equals()
 	</BugCode>
+	
+	<!-- Shuang Qiu -->
+	<BugCode abbrev="PO">Object initialization out of order.</BugCode>
 	
 	
 </MessageCollection>
