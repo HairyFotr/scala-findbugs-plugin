@@ -283,6 +283,15 @@
      </Details>
   </Detector>
   
+  <!-- #19 Renjie Qiu -->
+  <Detector class="cn.edu.sjtu.se.renjieQiu.FindReceiveInLoop">
+    <Details>
+        <![CDATA[
+            This detector finds using 'loop' with 'receive' in Scala Actor. 
+            ]]>
+    </Details>
+  </Detector>
+  
 	
 	
 	
@@ -837,7 +846,17 @@ Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
     </Details>
   </BugPattern>
 	
-	
+	<!-- #19 Renjie Qiu -->
+	<BugPattern type="SCALA_RECEIVE_IN_LOOP">
+    <ShortDescription>Use 'loop' with 'receive' in Scala Actor.</ShortDescription>
+    <LongDescription>Use 'loop' with 'receive' in Scala Actor. Use 'loop' with 'react' or 'while(true)' with 'receive' instead.</LongDescription>
+    <Details>
+<![CDATA[
+Use 'loop' with 'receive' in Scala Actor. Use 'loop' with 'react' or 'while(true)' with 'receive' instead.
+]]>
+    </Details>
+  </BugPattern>
+  
 	
 	
 
@@ -903,5 +922,8 @@ Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
 	
 	<!-- #18 Yintian Wang -->
 	<BugCode abbrev="SCALA_SBC">Same branch code for scala</BugCode>
+
+	<!-- #19 Renjie Qiu -->
+	<BugCode abbrev="SRIL">Found unprotected logging</BugCode>
 
 </MessageCollection>

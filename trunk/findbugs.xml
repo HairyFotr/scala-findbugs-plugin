@@ -89,6 +89,9 @@
 	<!-- #18 Yintian Wang -->
 	<Detector class="cn.edu.sjtu.se.yintianWang.FindSameBranchCode" speed="fast"
                     reports="SCALA_SBC_SAME_IFBRANCH_CODE,SCALA_SBC_SAME_MATCHBRANCH_CODE"/>
+                    
+	<!-- #19 Renjie Qiu -->
+	<Detector class="cn.edu.sjtu.se.renjieQiu.FindReceiveInLoop" speed="fast" reports="SCALA_RECEIVE_IN_LOOP" />
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -180,6 +183,10 @@
 		category="STYLE"/>
     <BugPattern abbrev="SCALA_SBC" type="SCALA_SBC_SAME_MATCHBRANCH_CODE"
 		category="STYLE"/>
+		
+	<!-- #19 Renjie Qiu -->
+	<BugPattern abbrev="SRIL" type="SCALA_RECEIVE_IN_LOOP" category="BAD_PRACTICE" />
+	
 	 
 </FindbugsPlugin>
 	
