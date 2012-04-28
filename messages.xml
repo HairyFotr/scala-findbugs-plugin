@@ -325,6 +325,14 @@
 		</Details>
 	</Detector>
 	
+	<!-- #24 Jieliang Dong -->
+	<Detector class="cn.edu.sjtu.se.jieliangDong.FindReturnDetector">
+		<Details>
+			<![CDATA[
+            <p>Potential bug of return missing</p>
+			]]>
+		</Details>
+	</Detector>
 	
 	
 	
@@ -973,7 +981,18 @@ is prefered.
 		</Details>
 	</BugPattern>
 	
-
+	
+	<!-- #24 Jieliang Dong -->
+	<BugPattern type="RETURN_MISSING">  
+		<ShortDescription>missing return value</ShortDescription>  
+		<LongDescription>missing return value, check if it is a mistake</LongDescription>  
+		<Details>  
+			<![CDATA[  
+			]]>  
+		</Details>  
+	</BugPattern> 
+	
+	
 
 	<!-- ************************* Bug Codes ***************************************** -->
 	<!-- common bug code -->
@@ -1048,5 +1067,8 @@ is prefered.
 	
 	<!-- #23 Xinglong Tan -->
 	<BugCode abbrev="BISB">Suspicious bitwise expression</BugCode>
+	
+	<!-- #24 Jieliang Dong -->
+	
 
 </MessageCollection>

@@ -105,6 +105,9 @@
 	<!-- #23 Xinglong Tan -->
 	<Detector class="cn.edu.sjtu.se.xinglongTan.BitwiseSignedByte" speed="fast" reports="BIT_IOR_SIGNED_BYTE"/>
 	
+	<!-- #24 Jieliang Dong -->
+	<Detector class="cn.edu.sjtu.se.jieliangDong.FindReturnDetector" speed="fast" reports="RETURN_MISSING" hidden="false" />
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -211,6 +214,9 @@
 	
 	<!-- #23 Xinglong Tan -->
 	<BugPattern type="BIT_IOR_SIGNED_BYTE" abbrev="BISB" category="CORRECTNESS"/>
+	
+	<!-- #24 Jieliang Dong -->
+	<BugPattern abbrev="SCALA" type="RETURN_MISSING" category="CORRECTNESS" />
 	
 	 
 </FindbugsPlugin>
