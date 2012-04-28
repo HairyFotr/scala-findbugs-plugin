@@ -272,6 +272,17 @@
 		  ]]>
 	  </Details>
   </Detector>
+  
+  <!-- #18 Yintian Wang -->
+  <Detector class="cn.edu.sjtu.se.yintianWang.FindSameBranchCode">
+    <Details>
+<![CDATA[
+<p> Find uses of same code for different if branch or match branch of the scala
+</p>
+]]>
+     </Details>
+  </Detector>
+  
 	
 	
 	
@@ -801,6 +812,33 @@ Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
   </BugPattern>
 	
 		
+	<!-- #18 Yintian Wang -->
+	<BugPattern type="SCALA_SBC_SAME_IFBRANCH_CODE">
+    <ShortDescription>same code for if branch</ShortDescription>
+    <LongDescription>same code for if branch</LongDescription>
+    <Details>
+      <![CDATA[
+    <p>The codes for different if branch of scala are identical.
+</p>
+
+]]>
+    </Details>
+  	 </BugPattern>
+  	 
+     <BugPattern type="SCALA_SBC_SAME_MATCHBRANCH_CODE">
+    <ShortDescription>same code for match branch</ShortDescription>
+    <LongDescription>same code for match branch</LongDescription>
+    <Details>
+      <![CDATA[
+    <p>The codes for different match branch of scala are identical.
+</p>
+
+]]>
+    </Details>
+  </BugPattern>
+	
+	
+	
 	
 
 
@@ -863,5 +901,7 @@ Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
 	
 	<!-- #17 Zilong Wang -->
 	
+	<!-- #18 Yintian Wang -->
+	<BugCode abbrev="SCALA_SBC">Same branch code for scala</BugCode>
 
 </MessageCollection>
