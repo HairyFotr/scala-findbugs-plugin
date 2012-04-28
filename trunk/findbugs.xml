@@ -230,7 +230,6 @@
 	
 	<!-- #26 Bo Li -->
 	<BugPattern abbrev="SCALA" type="RE-IMPLEMENT_OVERRIDDEN" category="BAD_PRACTICE" />
-	
 	 
 </FindbugsPlugin>
 	
