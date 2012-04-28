@@ -130,7 +130,14 @@
 		</Details>
 	</Detector>
     
-	
+	<!-- #8 Zhijing Wu -->
+	<Detector class="cn.edu.sjtu.se.zhijingWu.StrReplaceDetector">
+	  <Details>
+		  <![CDATA[
+		  <p>Checks the misuse of string.replace(char,char)  </p>
+		  ]]>
+	  </Details>
+	</Detector>
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
 	
@@ -400,6 +407,21 @@
 		</Details>  
 	</BugPattern>
 	
+	<!-- #8 Zhijing Wu -->
+	<BugPattern type="STR_REPLACE_MIS">  
+	  <ShortDescription>string.replace(char,char) misuse</ShortDescription>  
+	  <LongDescription>string.replace(char,char) doesn't change the variable itself</LongDescription>  
+	  <Details>  
+		  <![CDATA[  
+			<p>In <I>Programming in Scala</I>, 15.6</p>
+			<p>
+				string.replace(char,char)doesn't chang the variable itself,it only returns a new string value.So the use of it without a giving it to a new value
+				can be seen as a misuse of this funcion.It can always make an unexpected result.
+			</p>
+		  ]]>  
+	  </Details>  
+	</BugPattern>
+	
 	
 	<!-- ************************* Bug Codes ***************************************** -->
 	<!-- common bug code -->
@@ -436,5 +458,6 @@
 	
 	<!-- #7 Chang Liu -->
 	
+	<!-- #8 Zhijing Wu -->
 	
 </MessageCollection>

@@ -44,6 +44,9 @@
 	<!-- #7 Chang Liu -->
 	<Detector class="cn.edu.sjtu.se.changLiu.EquivalentJudgmentBugDetector" speed="fast" reports="MISS_HASHCODE_FUNCTION,MISS_NOT_EQUAL_FUNCTION,INVALID_EQUAL_FUNCTION" hidden="false" />
 	
+	<!-- #8 Zhijing Wu -->
+	<Detector class="cn.edu.sjtu.se.zhijingWu.StrReplaceDetector" speed="fast" reports="STR_REPLACE_MIS" hidden="false" />
+	
 	
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -92,6 +95,10 @@
 	<!-- #7 Chang Liu -->
 	<BugPattern abbrev="SCALA" type="MISS_HASHCODE_FUNCTION" category="BAD_PRACTICE" /> 
 	<BugPattern abbrev="SCALA" type="MISS_NOT_EQUAL_FUNCTION" category="BAD_PRACTICE" /> 
-	<BugPattern abbrev="SCALA" type="INVALID_EQUAL_FUNCTION" category="CORRECTNESS" /> 
+	<BugPattern abbrev="SCALA" type="INVALID_EQUAL_FUNCTION" category="CORRECTNESS" />
+	
+	<!-- #8 Zhijing Wu -->
+	<BugPattern abbrev="SCALA" type="STR_REPLACE_MIS" category="CORRECTNESS" />
+	 
 </FindbugsPlugin>
 	
