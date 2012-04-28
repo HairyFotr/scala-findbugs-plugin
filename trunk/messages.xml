@@ -101,16 +101,25 @@
 				</p>
 			]]>
     	</Details>
-  </Detector>
+	</Detector>
   
-  <!-- #5 Zhenbang Liu -->
-   <Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"> 
+	<!-- #5 Zhenbang Liu -->
+	<Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"> 
     <Details> 
  		<![CDATA[ 
  			<p>This detector looks for repeated conditional test in scala.</p>
  		]]> 
     </Details> 
-  </Detector> 
+	</Detector>
+  
+	<!-- #6 Tao Liu -->
+	<Detector class="cn.edu.sjtu.se.taoLiu.VarInHashCodeDetector">
+	<Details>
+		<![CDATA[
+		<p>var should not be used in hashCode.</p>
+		]]>
+	</Details>
+    </Detector> 
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -340,8 +349,21 @@
 		<p> In scala This method repeated conditional tests .  Make sure that you are comparing the right things.
 		</p>
 	]]>
-    </Details>
-  </BugPattern>	
+	</Details>
+	</BugPattern>
+	
+	<!-- #6 Tao Liu -->
+	<BugPattern type="VAR_IN_HASHCODE">
+	<ShortDescription>var used in hashCode
+	</ShortDescription>
+	<LongDescription>var used in hashCode.
+	</LongDescription>
+	<Details>  
+		<![CDATA[  
+        ]]>
+	</Details>
+	</BugPattern>
+		
 	
 	
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -371,6 +393,9 @@
 	
 	<!-- #5 Zhenbang Liu -->
 	<BugCode abbrev="RPC1">Found RPC in scala</BugCode>
+	
+	<!-- #6 Tao Liu -->
+	<BugCode abbrev="SCALA_TAO_LIU">Programming mistake in Scala</BugCode>
 	
 	
 </MessageCollection>

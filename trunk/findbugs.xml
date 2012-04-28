@@ -33,9 +33,13 @@
 	<Detector class="cn.edu.sjtu.se.shuangQiu.PartialInitializedObjectDetector" speed="fast"
 		reports="PartialInitialized" />
   
-  <!-- #5 Zhenbang Liu -->
-  <Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"  hidden="false"
-     reports="RpC_REPEATED_CONDITIONAL_TEST1" />
+	<!-- #5 Zhenbang Liu -->
+	<Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"  hidden="false"
+		reports="RpC_REPEATED_CONDITIONAL_TEST1" />
+		
+	<!-- #6 Tao Liu -->
+	<Detector class="cn.edu.sjtu.se.taoLiu.VarInHashCodeDetector"
+        speed="fast" reports="VAR_IN_HASHCODE" hidden="false" />
 	
 	
 	
@@ -79,6 +83,9 @@
 	
 	<!-- #5 Zhenbang Liu -->
 	<BugPattern abbrev="RPC1" type="RpC_REPEATED_CONDITIONAL_TEST1" category="CORRECTNESS"  />
+	
+	<!-- #6 Tao Liu -->
+	<BugPattern abbrev="SCALA_TAO_LIU" type="VAR_IN_HASHCODE" category="BAD_PRACTICE" />
 	
 	
 </FindbugsPlugin>
