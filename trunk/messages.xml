@@ -334,6 +334,18 @@
 		</Details>
 	</Detector>
 	
+	<!-- #25 Xuye Qin -->
+	<Detector class="cn.edu.sjtu.se.xuyeQin.MethodReturnsConstantDetector">
+  	<Details>
+        <![CDATA[
+		<p>Looks for private methods that only return one constant value. Since there is no
+		chance for derived classes overriding this behavior, the return of a constant value 
+		seems dubious.</p>
+		<p>It is a fast detector</p>
+		]]>
+    </Details>
+
+   </Detector>
 	
 	
 
@@ -992,6 +1004,21 @@ is prefered.
 		</Details>  
 	</BugPattern> 
 	
+	<!-- #25 Xuye Qin -->
+	<BugPattern type="MRC_METHOD_RETURNS_CONSTANT">
+        <ShortDescription>Private method only returns one constant value</ShortDescription>
+        <LongDescription>Private method {1} only returns one constant value</LongDescription>
+        <Details>
+			<![CDATA[
+			<p>This private method only returns one constant value. As this method is private,
+			it's behavior can't be overridden, and thus the return of a constant value seems dubious.
+			Either the method should be changed to return no value, or perhaps another return value
+			was expected to be returned in another code path in this method.</p>
+			]]>
+        </Details>
+	</BugPattern>
+	
+	
 	
 
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -1069,6 +1096,9 @@ is prefered.
 	<BugCode abbrev="BISB">Suspicious bitwise expression</BugCode>
 	
 	<!-- #24 Jieliang Dong -->
+	
+	<!-- #25 Xuye Qin -->
+	<BugCode abbrev="MRC">Method Returns Constant</BugCode>
 	
 
 </MessageCollection>

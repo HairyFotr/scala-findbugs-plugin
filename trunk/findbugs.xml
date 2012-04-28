@@ -108,7 +108,10 @@
 	<!-- #24 Jieliang Dong -->
 	<Detector class="cn.edu.sjtu.se.jieliangDong.FindReturnDetector" speed="fast" reports="RETURN_MISSING" hidden="false" />
 	
-
+	<!-- #25 Xuye Qin -->
+	<Detector class="cn.edu.sjtu.se.xuyeQin.MethodReturnsConstantDetector" speed="fast" reports="MRC_METHOD_RETURNS_CONSTANT" />
+	
+	
 
 	<!-- ************************* Bug Patterns ***************************************** -->
 	<!-- #1 Qi Wang -->
@@ -217,6 +220,9 @@
 	
 	<!-- #24 Jieliang Dong -->
 	<BugPattern abbrev="SCALA" type="RETURN_MISSING" category="CORRECTNESS" />
+	
+	<!-- #25 Xuye Qin -->
+	<BugPattern abbrev="MRC" type="MRC_METHOD_RETURNS_CONSTANT" category="STYLE" />
 	
 	 
 </FindbugsPlugin>
