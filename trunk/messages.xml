@@ -139,6 +139,18 @@
 	  </Details>
 	</Detector>
 	
+	<!-- #9 Ling Sun -->
+	<Detector class="cn.edu.sjtu.se.lingSun.FindBadForLoopScala">
+    <Details>
+	<![CDATA[
+		<p> This detector looks for incorrect for loops.
+		</p>
+	]]>
+    </Details>
+	</Detector>
+	
+	
+	
 	<!-- ************************* Bug Patterns ***************************************** -->
 	
 	<!-- #1 Qi Wang -->
@@ -422,6 +434,22 @@
 	  </Details>  
 	</BugPattern>
 	
+	<!-- #9 Ling Sun -->
+	<BugPattern type="QF_QUESTIONABLE_FOR_LOOP">
+    <ShortDescription>Complicated, subtle or wrong increment in for-loop </ShortDescription>
+    <LongDescription>Complicated, subtle or wrong increment in for-loop {1} </LongDescription>
+    <Details>
+	<![CDATA[
+   		<p>Are you sure this for loop is incrementing the correct variable?
+   		It appears that another variable is being initialized and checked
+   		by the for loop.
+		</p>
+	]]>
+    </Details>
+	</BugPattern>
+	
+	
+	
 	
 	<!-- ************************* Bug Codes ***************************************** -->
 	<!-- common bug code -->
@@ -459,5 +487,8 @@
 	<!-- #7 Chang Liu -->
 	
 	<!-- #8 Zhijing Wu -->
+	
+	<!-- #9 Ling Sun -->
+	<BugCode abbrev="QF">Questionable for loops</BugCode>
 	
 </MessageCollection>
