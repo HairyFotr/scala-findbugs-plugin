@@ -149,6 +149,15 @@
     </Details>
 	</Detector>
 	
+	<!-- #10 Mingrui Zhang -->
+	<Detector class="cn.edu.sjtu.se.mingruiZhang.EmptyRangeDetector">
+    <Details>
+          <![CDATA[
+          <p>Potential bug of generating empty Range with decending parameters. </p>
+          ]]>
+    </Details>
+	</Detector>
+	
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -448,6 +457,45 @@
     </Details>
 	</BugPattern>
 	
+	<!-- #10 Mingrui Zhang -->
+	<BugPattern type="EMPTY_RANGE">  
+    <ShortDescription>Using "to" method with decreasing parameters</ShortDescription>  
+    <LongDescription>Using "to" method with decreasing parameters, check if it's a bug</LongDescription>  
+    <Details>  
+        <![CDATA[  
+		<p>In Scala language:</p>
+		<p><code>
+			1 to 4 = Range(1,2,3,4)
+		</code></p>
+		<p><code>
+			-1 to -4 = Range()
+		</code></p>
+		<p>
+		However, some new scala programmers may have the wrong idea that:
+		</p>
+		<p><code>
+			-1 to -4 = Range(-1,-2,-3,-4)	//this is wrong!
+		</code></p>
+		<p>
+		This notification indicates that in your code you are generating empty
+		Range object with decreasing parameters, which may be a bug.
+		</p>
+		<p>
+		You can fix it by swaping the parameters:
+		</p>
+		<p><code>
+			-4 to -1 = Range(-4,-3,-2,-1)
+		</code></p>	
+		<p>
+		or setting appropriate step number:
+		</p>
+		<p><code>
+			-1 to -4 by -1 = Range(-1,-2,-3,-4)
+		</code></p>
+        ]]>  
+    </Details>  
+	</BugPattern>
+	
 	
 	
 	
@@ -490,5 +538,7 @@
 	
 	<!-- #9 Ling Sun -->
 	<BugCode abbrev="QF">Questionable for loops</BugCode>
+	
+	<!-- #10 Mingrui Zhang -->
 	
 </MessageCollection>

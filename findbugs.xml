@@ -51,6 +51,12 @@
 	<Detector class="cn.edu.sjtu.se.lingSun.FindBadForLoopScala" speed="fast"
 		reports="QF_QUESTIONABLE_FOR_LOOP"/>
 
+	<!-- #10 Mingrui Zhang -->
+	<Detector class="cn.edu.sjtu.se.mingruiZhang.EmptyRangeDetector" speed="fast"
+		reports="EMPTY_RANGE" hidden="false" />
+
+
+
 	<!-- ************************* Bug Patterns ***************************************** -->
 	<!-- #1 Qi Wang -->
 	<BugPattern type="USE_IMMUT_COLLECTION_IN_LOOP" abbrev="CO" category="PERFORMANCE" />
@@ -104,6 +110,11 @@
 	
 	<!-- #9 Ling Sun -->
 	<BugPattern abbrev="QF" type="QF_QUESTIONABLE_FOR_LOOP" category="STYLE"/>
+	
+	<!-- #10 Mingrui Zhang -->
+	<BugPattern abbrev="SCALA" type="EMPTY_RANGE" category="CORRECTNESS" />
+	 
+	 
 	 
 </FindbugsPlugin>
 	
