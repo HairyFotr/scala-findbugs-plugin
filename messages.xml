@@ -309,7 +309,14 @@
 	  </Details>
   </Detector>
 	
-	
+	<!-- #22 Xi Jia -->
+	<Detector class="cn.edu.sjtu.se.xiJia.CheckImplicitDetector">
+		<Details>
+			<![CDATA[
+            <p>Potential bug of misusing Implicit on Syntactic sugar</p>
+			]]>
+		</Details>
+	</Detector>
 	
 
 
@@ -934,8 +941,15 @@ is prefered.
 	  </Details>  
   </BugPattern> 
   
-		
-	
+	<!-- #22 Xi Jia -->
+	<BugPattern type="IMPLICIT_MISUSE">  
+		<ShortDescription>mistake of syntactic sugar caused by implicit casts</ShortDescription>  
+		<LongDescription>mistake of syntactic sugar caused by implicit casts may happened, check if it is a mistake</LongDescription>  
+		<Details>  
+			<![CDATA[  
+			]]>  
+		</Details>  
+	</BugPattern> 
 
 
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -1006,5 +1020,7 @@ is prefered.
 	<!-- #20 Yuan Zhao -->
 	
 	<!-- #21 Zheng Wang-->
+	
+	<!-- #22 Xi Jia -->
 
 </MessageCollection>
