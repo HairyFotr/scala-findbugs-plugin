@@ -60,6 +60,12 @@
 		speed="fast" reports="GENERIC_MISUSED"/>
 	<Detector class="cn.edu.sjtu.se.gangZhang.ExceptionOrderDetect"
 		speed="fast" reports="EXCEPTION_ORDER_PROBLEM"/>
+		
+	<!-- #12 Mengping Li -->
+	<Detector class="cn.edu.sjtu.se.mengpingLi.MissHashCodeDetector" speed="fast" 
+		reports="MISS_HASHCODE_METHOD" hidden="false" />
+	<Detector class="cn.edu.sjtu.se.mengpingLi.MissExceptionHandlerDetector" speed="fast" 
+		reports="MISS_EXCEPITON_HANDLER" hidden="false" />
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -123,6 +129,11 @@
 	<BugPattern abbrev="MUG" type="GENERIC_MISUSED" category="CORRECTNESS" />
 	<BugPattern abbrev="EOD" type="EXCEPTION_ORDER_PROBLEM"
 		category="CORRECTNESS" />
+		
+	<!-- #12 Mengping Li -->
+	<BugPattern abbrev="SCALA" type="MISS_HASHCODE_METHOD" category="BAD_PRACTICE" />
+	<BugPattern abbrev="SCALA" type="MISS_EXCEPITON_HANDLER" category="BAD_PRACTICE" />
+		
 		
 	 
 </FindbugsPlugin>
