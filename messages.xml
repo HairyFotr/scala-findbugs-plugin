@@ -318,7 +318,16 @@
 		</Details>
 	</Detector>
 	
-
+	<!-- #23 Xinglong Tan -->
+	<Detector class="cn.edu.sjtu.se.xinglongTan.BitwiseSignedByte">
+		<Details>
+			Finds instances of Bitwise IOR of Signed Byte
+		</Details>
+	</Detector>
+	
+	
+	
+	
 
 	<!-- ************************* Bug Patterns ***************************************** -->
 
@@ -950,6 +959,20 @@ is prefered.
 			]]>  
 		</Details>  
 	</BugPattern> 
+	
+	
+	<!-- #23 Xinglong Tan -->
+	<BugPattern type="BIT_IOR_SIGNED_BYTE">
+		<ShortDescription>Bitwise OR of signed byte value</ShortDescription>
+		<LongDescription>Bitwise OR of signed byte computed in {1}
+		</LongDescription>
+		<Details>
+<![CDATA[
+<p>Loads a byte value (e.g., a value loaded from a byte array or returned by a method with return type byte) and performs a bitwise OR with that value. Byte values are sign extended to 32 bits before any any bitwise operations are performed on the value. Thus, if b[0] contains the value 0xff, and x is initially 0, then the code ((x &lt&lt 8) | b[0]) will sign extend 0xff to get 0xffffffff, and thus give the value 0xffffffff as the result.</p>
+]]>
+		</Details>
+	</BugPattern>
+	
 
 
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -1022,5 +1045,8 @@ is prefered.
 	<!-- #21 Zheng Wang-->
 	
 	<!-- #22 Xi Jia -->
+	
+	<!-- #23 Xinglong Tan -->
+	<BugCode abbrev="BISB">Suspicious bitwise expression</BugCode>
 
 </MessageCollection>
