@@ -262,6 +262,16 @@
 ]]>
         </Details>
     </Detector>
+    
+    
+    <!-- #17 Zilong Wang -->
+    <Detector class="cn.edu.sjtu.se.zilongWang.CircularDependenciesDetector">
+	  <Details>
+		  <![CDATA[
+<p>Potential bug of CircularDependencies</p>
+		  ]]>
+	  </Details>
+  </Detector>
 	
 	
 	
@@ -773,7 +783,22 @@ Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
           ]]>
         </Details>
     </BugPattern>
-	
+    
+    
+    <!-- #17 Zilong Wang -->
+	<BugPattern type="CIRCULAR_DEPENDENCY">  
+	  <ShortDescription>Circular Dependencies</ShortDescription>  
+	  <LongDescription>Class {0} has a circular dependency with other classes</LongDescription>  
+	  <Details>  
+		  <![CDATA[  
+<p>Circular dependencies can cause many unwanted effects in software programs. Most problematic from a software design point of view is the tight coupling of the mutually dependent modules which reduces or makes impossible the separate re-use of a single module.</p>
+
+<p>Circular dependencies can cause a domino effect when a small local change in one module spreads into other modules and has unwanted global effects (program errors, compile errors). Circular dependencies can also result in infinite recursions or other unexpected failures.</p>
+
+<p>Circular dependencies may also cause memory leaks by preventing certain very primitive automatic garbage collectors (those that use reference counting) from deallocating unused objects.</p>
+		  ]]>  
+	  </Details>  
+  </BugPattern>
 	
 		
 	
@@ -836,6 +861,7 @@ Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
 	
 	<!-- #16 Jun Wang -->
 	
-		
+	<!-- #17 Zilong Wang -->
+	
 
 </MessageCollection>

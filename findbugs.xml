@@ -82,6 +82,10 @@
         speed="fast" reports="PACKAGE_OBJECT_MISUSE" hidden="false" />
     <Detector class="cn.edu.sjtu.se.junWang.VarNotReassignedDetector"
         speed="fast" reports="VAR_NOT_REASSIGNED" hidden="false" />
+        
+	<!-- #17 Zilong Wang -->
+	<Detector class="cn.edu.sjtu.se.zilongWang.CircularDependenciesDetector" speed="fast" reports="CIRCULAR_DEPENDENCY" hidden="false"  />	     
+        
 	
 
 
@@ -166,6 +170,8 @@
     <BugPattern abbrev="SCALA" type="VAR_NOT_REASSIGNED"
         category="BAD_PRACTICE" />
 	
+	<!-- #17 Zilong Wang -->
+	<BugPattern abbrev="SCALA" type="CIRCULAR_DEPENDENCY" category="Dodgy" />
 	 
 </FindbugsPlugin>
 	
