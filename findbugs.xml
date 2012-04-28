@@ -70,6 +70,11 @@
 	<!-- #13 Dingkun Yang -->
 	<Detector class="cn.edu.sjtu.se.dingkunYang.ScalaMatchWithoutDefault" speed="moderate"
       		      reports="SCALA_MATCH_WITHOUT_DEFAULT" />
+      		      
+	<!-- #14 Weicheng Yang -->
+	<Detector class="cn.edu.sjtu.se.weichengYang.detector.scala.FirstLetterLowerInMatchDetector" reports="FIRST_LETTER_LOWER_IN_MATCH" />
+	
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -140,6 +145,10 @@
 		
 	<!-- #13 Dingkun Yang -->
 	<BugPattern abbrev="S_MWD" type="SCALA_MATCH_WITHOUT_DEFAULT" category="CORRECTNESS" />
+	
+	<!-- #14 Weicheng Yang -->
+	<BugPattern type="FIRST_LETTER_LOWER_IN_MATCH" abbrev="MAT" category="BAD_PRACTICE" />
+	
 	 
 </FindbugsPlugin>
 	
