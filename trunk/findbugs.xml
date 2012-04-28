@@ -102,6 +102,9 @@
 	<!-- #22 Xi Jia -->
 	<Detector class="cn.edu.sjtu.se.xiJia.CheckImplicitDetector" speed="fast" reports="IMPLICIT_MISUSE" hidden="false" />
 	
+	<!-- #23 Xinglong Tan -->
+	<Detector class="cn.edu.sjtu.se.xinglongTan.BitwiseSignedByte" speed="fast" reports="BIT_IOR_SIGNED_BYTE"/>
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -206,6 +209,8 @@
 	<!-- #22 Xi Jia -->
 	<BugPattern abbrev="SCALA" type="IMPLICIT_MISUSE" category="CORRECTNESS" />
 	
+	<!-- #23 Xinglong Tan -->
+	<BugPattern type="BIT_IOR_SIGNED_BYTE" abbrev="BISB" category="CORRECTNESS"/>
 	
 	 
 </FindbugsPlugin>
