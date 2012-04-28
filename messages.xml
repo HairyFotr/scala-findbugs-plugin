@@ -299,7 +299,15 @@
   ]]>
   </Details>
   </Detector>
-	
+  
+	<!-- #21 Zheng Wang-->
+	<Detector class="cn.edu.sjtu.se.zhengWang.StoreBeforeReturnDetector">
+	  <Details>
+<![CDATA[
+<p>Potential bug of misusing scala.Option</p>
+]]>
+	  </Details>
+  </Detector>
 	
 	
 	
@@ -874,7 +882,59 @@ Use 'loop' with 'receive' in Scala Actor. Use 'loop' with 'react' or 'while(true
     </Details>
   </BugPattern>
   
-	
+	<!-- #21 Zheng Wang-->
+	<BugPattern type="STORE_BEFORE_RETURN">  
+	  <ShortDescription>Store Before Return Is Unnecessary</ShortDescription>  
+	  <LongDescription>Store Before Return Is Unnecessary, It is a bad practice</LongDescription>  
+	  <Details>  
+		  <![CDATA[  
+<p>
+This method stores the return result in a local variable, and then immediately returns the local variable. 
+It would be simpler just to return the value that is assigned to the local variable, directly. 
+</p>
+
+<p><pre>
+object A
+{
+	def test():String=
+	{
+	 var s="abc";
+	 s;
+	 }
+	def main(args: Array[String])
+	{
+		println(test());
+	}
+}
+</pre></p>
+
+<p>
+s is Unnecessary
+</p>
+
+<p><pre>
+object A
+{
+	def test():String=
+	{
+	 "abc";
+	 }
+	def main(args: Array[String])
+	{
+		println(test());
+	}
+}
+</pre></p>
+
+<p>
+is prefered.
+</p>
+
+]]>  
+	  </Details>  
+  </BugPattern> 
+  
+		
 	
 
 
@@ -942,5 +1002,9 @@ Use 'loop' with 'receive' in Scala Actor. Use 'loop' with 'react' or 'while(true
 
 	<!-- #19 Renjie Qiu -->
 	<BugCode abbrev="SRIL">Found unprotected logging</BugCode>
+	
+	<!-- #20 Yuan Zhao -->
+	
+	<!-- #21 Zheng Wang-->
 
 </MessageCollection>

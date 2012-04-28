@@ -95,6 +95,10 @@
 	
 	<!-- #20 Yuan Zhao -->
 	<Detector class="cn.edu.sjtu.se.yuanZhao.ImplicitConversionDetector" speed="fast" reports="SCALA_IMPLICIT_CONVERSION" />
+	
+	<!-- #21 Zheng Wang-->
+	<Detector class="cn.edu.sjtu.se.zhengWang.StoreBeforeReturnDetector" speed="fast" reports="STORE_BEFORE_RETURN" hidden="false" />
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -192,6 +196,9 @@
 	
 	<!-- #20 Yuan Zhao -->
 	<BugPattern abbrev="SCALA" type="SCALA_IMPLICIT_CONVERSION" category="BAD_PRACTICE" />
+	
+	<!-- #21 Zheng Wang-->
+	<BugPattern abbrev="SCALA" type="STORE_BEFORE_RETURN" category="BAD_PRACTICE" />
 	
 	
 	 
