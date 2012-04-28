@@ -92,6 +92,9 @@
                     
 	<!-- #19 Renjie Qiu -->
 	<Detector class="cn.edu.sjtu.se.renjieQiu.FindReceiveInLoop" speed="fast" reports="SCALA_RECEIVE_IN_LOOP" />
+	
+	<!-- #20 Yuan Zhao -->
+	<Detector class="cn.edu.sjtu.se.yuanZhao.ImplicitConversionDetector" speed="fast" reports="SCALA_IMPLICIT_CONVERSION" />
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -186,6 +189,10 @@
 		
 	<!-- #19 Renjie Qiu -->
 	<BugPattern abbrev="SRIL" type="SCALA_RECEIVE_IN_LOOP" category="BAD_PRACTICE" />
+	
+	<!-- #20 Yuan Zhao -->
+	<BugPattern abbrev="SCALA" type="SCALA_IMPLICIT_CONVERSION" category="BAD_PRACTICE" />
+	
 	
 	 
 </FindbugsPlugin>
