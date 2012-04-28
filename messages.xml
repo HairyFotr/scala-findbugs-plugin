@@ -5,47 +5,64 @@
 		<ShortDescription>FindBugs Plugin for Scala</ShortDescription>
 		<Details>Provides detectors to detector Scala bug patterns.</Details>
 	</Plugin>
-	
+
 	<!-- ************************* Detectors ***************************************** -->
-	
+
 	<!-- #1 Qi Wang -->
-	<Detector class="cn.edu.sjtu.stap.detector.scala.WrongEqualsOrHashcodeDetector">
+	<Detector
+		class="cn.edu.sjtu.stap.detector.scala.WrongEqualsOrHashcodeDetector">
 		<Details></Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.OptionCompNullDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
-	<Detector class="cn.edu.sjtu.stap.detector.scala.UseVarDefineHashCodeDetector">
-		<Details> </Details>
+	<Detector
+		class="cn.edu.sjtu.stap.detector.scala.UseVarDefineHashCodeDetector">
+		<Details>
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.NilListInMatchDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
-	<Detector class="cn.edu.sjtu.stap.detector.scala.MultiAssignWithPatternDetector">
-		<Details> </Details>
+	<Detector
+		class="cn.edu.sjtu.stap.detector.scala.MultiAssignWithPatternDetector">
+		<Details>
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.HangingVarOrConstDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.EmptyRangeDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.DeadCodeReturnDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.UseImmutableInLoopDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
-	<Detector class="cn.edu.sjtu.stap.detector.scala.CompareAssignedValueDetector">
-		<Details>Find comparing the return value of assignment with other value  </Details>
+	<Detector
+		class="cn.edu.sjtu.stap.detector.scala.CompareAssignedValueDetector">
+		<Details>Find comparing the return value of assignment with other
+			value
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.stap.detector.scala.TypeEraseDetector">
-		<Details> </Details>
+		<Details>
+		</Details>
 	</Detector>
-	<Detector class="cn.edu.sjtu.stap.detector.scala.FirstLetterLowerInMatchDetector">
-		<Details> </Details>
+	<Detector
+		class="cn.edu.sjtu.stap.detector.scala.FirstLetterLowerInMatchDetector">
+		<Details>
+		</Details>
 	</Detector>
-	
+
 	<!-- #2 Yudi Zheng -->
 	<Detector class="cn.edu.sjtu.se.yudiZheng.UnreachableCodeDetector">
 		<Details>
@@ -61,14 +78,14 @@
 		]]>
 		</Details>
 	</Detector>
-	
+
 	<!-- #3 Shunping Wang -->
 	<Detector class="cn.edu.sjtu.se.shunpingWang.ScalaFindPuzzlers">
 		<Details>
 			<![CDATA[
 				<p> ScalaFindPuzzlers detect </p>
 			]]>
-    	</Details>
+		</Details>
 	</Detector>
 	<Detector class="cn.edu.sjtu.se.shunpingWang.ScalaHEmismatch">
 		<Details>
@@ -77,10 +94,10 @@
 			]]>
 		</Details>
 	</Detector>
-	
+
 	<!-- #4 Shuang Qiu -->
 	<Detector class="cn.edu.sjtu.se.shuangQiu.PartialInitializedObjectDetector">
-    	<Details>
+		<Details>
 			<![CDATA[
 				<p> This detector finds unordered initialization sequence. </p>
 				<p>
@@ -100,64 +117,64 @@
 				Now the test code <code> Sub s = new Sub(); </code> constructor of <code>Base</code> will in fact invoke <code>foo()</code> of class <code>Sub</code> though object <code>s</code> is partially initialized.
 				</p>
 			]]>
-    	</Details>
+		</Details>
 	</Detector>
-  
+
 	<!-- #5 Zhenbang Liu -->
-	<Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"> 
-    <Details> 
+	<Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition">
+		<Details> 
  		<![CDATA[ 
  			<p>This detector looks for repeated conditional test in scala.</p>
- 		]]> 
-    </Details> 
+ 		]]>
+		</Details>
 	</Detector>
-  
+
 	<!-- #6 Tao Liu -->
 	<Detector class="cn.edu.sjtu.se.taoLiu.VarInHashCodeDetector">
-	<Details>
+		<Details>
 		<![CDATA[
 		<p>var should not be used in hashCode.</p>
 		]]>
-	</Details>
-    </Detector> 
-    
-    <!-- #7 Chang Liu -->
-    <Detector class="cn.edu.sjtu.se.changLiu.EquivalentJudgmentBugDetector">
+		</Details>
+	</Detector>
+
+	<!-- #7 Chang Liu -->
+	<Detector class="cn.edu.sjtu.se.changLiu.EquivalentJudgmentBugDetector">
 		<Details>
 			<![CDATA[
             <p>Potential bug of equivalent judgment.</p>
 			]]>
 		</Details>
 	</Detector>
-    
+
 	<!-- #8 Zhijing Wu -->
 	<Detector class="cn.edu.sjtu.se.zhijingWu.StrReplaceDetector">
-	  <Details>
+		<Details>
 		  <![CDATA[
 		  <p>Checks the misuse of string.replace(char,char)  </p>
 		  ]]>
-	  </Details>
+		</Details>
 	</Detector>
-	
+
 	<!-- #9 Ling Sun -->
 	<Detector class="cn.edu.sjtu.se.lingSun.FindBadForLoopScala">
-    <Details>
+		<Details>
 	<![CDATA[
 		<p> This detector looks for incorrect for loops.
 		</p>
 	]]>
-    </Details>
+		</Details>
 	</Detector>
-	
+
 	<!-- #10 Mingrui Zhang -->
 	<Detector class="cn.edu.sjtu.se.mingruiZhang.EmptyRangeDetector">
-    <Details>
+		<Details>
           <![CDATA[
           <p>Potential bug of generating empty Range with decending parameters. </p>
           ]]>
-    </Details>
+		</Details>
 	</Detector>
-	
+
 	<!-- #11 Gang Zhang -->
 	<Detector class="cn.edu.sjtu.se.gangZhang.MethodUseGenericDetect">
 		<Details> 
@@ -175,11 +192,42 @@
  	]]>
 		</Details>
 	</Detector>
-	
-	
-	
+
+	<!-- #12 Mengping Li -->
+	<Detector class="cn.edu.sjtu.se.mengpingLi.MissHashCodeDetector">
+		<Details>
+	  <![CDATA[
+		<p>Potential bug of override equals method but don't orverride hashCode()</p>
+	 	]]>
+		</Details>
+	</Detector>
+
+	<Detector class="cn.edu.sjtu.se.mengpingLi.MissExceptionHandlerDetector">
+		<Details>
+	  <![CDATA[
+<h1>Miss ExceptionHandler</h1>
+</hr>
+<p><b>e.g.</b></p>
+<p>
+1.&nbsp;&nbsp;object A extends Actor {    <br/>
+2.&nbsp;&nbsp;&nbsp;&nbsp;def act() {    <br/>
+3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;react {    <br/>
+4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'hello =>    <br/>
+5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Exception("Error!")    <br/>
+6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}    <br/>
+7.&nbsp;&nbsp;&nbsp;&nbsp;}   <br/>
+8.&nbsp;&nbsp;}<br/>
+</p>
+	]]>
+		</Details>
+	</Detector>
+
+
+
+
+
 	<!-- ************************* Bug Patterns ***************************************** -->
-	
+
 	<!-- #1 Qi Wang -->
 	<BugPattern type="USE_IMMUT_COLLECTION_IN_LOOP">
 		<ShortDescription>在循环中对不可变容器添加元素</ShortDescription>
@@ -283,28 +331,34 @@
 		<Details> <![CDATA[ <p>Scala中只有数组类型在编译时被保留，其他数据结构的泛型参数会被擦除。使用带参数类型的数据结构进行模式匹配时，将只匹配类型，而不匹配参数类型.</p> ]]>
 		</Details>
 	</BugPattern>
-	
+
 	<!-- #2 Yudi Zheng -->
 	<BugPattern type="UNREACHABLE">
 		<ShortDescription> Unreachable code </ShortDescription>
 		<LongDescription> Unreachable code detected. </LongDescription>
-		<Details>Unreachable code is detected inside this method. Analysis based on control flow graph might now be applied in these code, e.g. ASM analyzer. </Details>
+		<Details>Unreachable code is detected inside this method. Analysis
+			based on control flow graph might now be applied in these code, e.g.
+			ASM analyzer.
+		</Details>
 	</BugPattern>
 	<BugPattern type="CASE_INHERIT">
 		<ShortDescription> Case class inheritance </ShortDescription>
-		<LongDescription> A case class inherites another case class. </LongDescription>
+		<LongDescription> A case class inherites another case class.
+		</LongDescription>
 		<Details>
 			<![CDATA[
 				<p>Case class inheritance will introduce buggy behavior. If you compare two instances from two case classes with a relationship of inheritance, they will definitely be different, 
 				while in some cases you expect a same result. </p> 
-			]]> 
+			]]>
 		</Details>
 	</BugPattern>
-	
+
 	<!-- #3 Shunping Wang -->
 	<BugPattern type="SCALA_CO_COMPARETO_RESULTS_MIN_VALUE">
-		<ShortDescription>compareTo()/compare() returns Integer.MIN_VALUE</ShortDescription>
-		<LongDescription>{1} returns Integer.MIN_VALUE, which can't be negated</LongDescription>
+		<ShortDescription>compareTo()/compare() returns Integer.MIN_VALUE
+		</ShortDescription>
+		<LongDescription>{1} returns Integer.MIN_VALUE, which can't be negated
+		</LongDescription>
 		<Details>
 			<![CDATA[
   			<p> In some situation, this compareTo or compare method returns 
@@ -315,10 +369,11 @@
     			So just return -1 rather than Integer.MIN_VALUE.
     		</p>
 			]]>
-    </Details>
+		</Details>
 	</BugPattern>
 	<BugPattern type="SCALA_RV_NEGATING_RESULT_OF_COMPARETO">
-		<ShortDescription>Negating the result of compareTo()/compare()</ShortDescription>
+		<ShortDescription>Negating the result of compareTo()/compare()
+		</ShortDescription>
 		<LongDescription>{1} negates the return value of {2}</LongDescription>
 		<Details>
 			<![CDATA[
@@ -329,21 +384,25 @@
 					by reversing the order of the operands rather than by negating the results.
 				</p>
 			]]>
-    </Details>
+		</Details>
 	</BugPattern>
 	<BugPattern type="SCALA_CO_COMPARETO_NON_INT_RETURN">
 		<ShortDescription>compareTo return none int</ShortDescription>
-		<LongDescription>{0} defines {1.givenClass} and return none int</LongDescription>
+		<LongDescription>{0} defines {1.givenClass} and return none int
+		</LongDescription>
 		<Details>
 			<![CDATA[
   				<p> method compareTo return value is not an int, change the method name to avoid missuderstanding
 				</p>
 			]]>
-	</Details>
+		</Details>
 	</BugPattern>
 	<BugPattern type="SCALA_EQ_COMPARETO_USE_OBJECT_EQUALS">
-		<ShortDescription>Class defines compareTo(...) and uses Object.equals()</ShortDescription>
-		<LongDescription>{0} defines {1.givenClass} and uses Object.equals()</LongDescription>
+		<ShortDescription>Class defines compareTo(...) and uses
+			Object.equals()
+		</ShortDescription>
+		<LongDescription>{0} defines {1.givenClass} and uses Object.equals()
+		</LongDescription>
 		<Details>
 			<![CDATA[
   				<p> This class defines a <code>compareTo(...)</code> method but inherits its
@@ -364,14 +423,17 @@
 					</blockquote>
 				</p>
 			]]>
-    </Details>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #4 Shuang Qiu -->
 	<BugPattern type="PartialInitialized" category="STYLE">
-    <ShortDescription>Object initialization out of order.</ShortDescription>
-    <LongDescription>Method of partially initialized sub-class object is invoked inside constructor of base class.</LongDescription>
-    <Details>
+		<ShortDescription>Object initialization out of order.
+		</ShortDescription>
+		<LongDescription>Method of partially initialized sub-class object is
+			invoked inside constructor of base class.
+		</LongDescription>
+		<Details>
 	<![CDATA[
 		<p> This detector finds unordered initialization sequence. </p>
 		<p>
@@ -391,95 +453,106 @@
 		Now the test code <code> Sub s = new Sub(); </code> constructor of <code>Base</code> will in fact invoke <code>foo()</code> of class <code>Sub</code> though object <code>s</code> is partially initialized.
 		</p>
 	]]>
-	</Details>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #5 Zhenbang Liu -->
 	<BugPattern type="RpC_REPEATED_CONDITIONAL_TEST1">
-    <ShortDescription> repeated condition tests in scala
-	</ShortDescription>
-	<LongDescription>condition {2} repeated with {1}
-	</LongDescription>
-    <Details>
+		<ShortDescription> repeated condition tests in scala
+		</ShortDescription>
+		<LongDescription>condition {2} repeated with {1}
+		</LongDescription>
+		<Details>
 	<![CDATA[
 		<p> In scala This method repeated conditional tests .  Make sure that you are comparing the right things.
 		</p>
 	]]>
-	</Details>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #6 Tao Liu -->
 	<BugPattern type="VAR_IN_HASHCODE">
-	<ShortDescription>var used in hashCode
-	</ShortDescription>
-	<LongDescription>var used in hashCode.
-	</LongDescription>
-	<Details>  
+		<ShortDescription>var used in hashCode
+		</ShortDescription>
+		<LongDescription>var used in hashCode.
+		</LongDescription>
+		<Details>  
 		<![CDATA[  
         ]]>
-	</Details>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #7 Chang Liu -->
-	<BugPattern type="MISS_HASHCODE_FUNCTION">  
-		<ShortDescription>Class defines equals() without hashCode()</ShortDescription>  
-		<LongDescription>Class defines equals() without hashCode()</LongDescription>  
+	<BugPattern type="MISS_HASHCODE_FUNCTION">
+		<ShortDescription>Class defines equals() without hashCode()
+		</ShortDescription>
+		<LongDescription>Class defines equals() without hashCode()
+		</LongDescription>
 		<Details>  
 			<![CDATA[  
-			]]>  
-		</Details>  
-	</BugPattern> 
-	<BugPattern type="MISS_NOT_EQUAL_FUNCTION">  
-		<ShortDescription>Class defines ==() without !=()</ShortDescription>  
-		<LongDescription>Class defines ==() without !=()</LongDescription>  
-		<Details>  
-			<![CDATA[  
-			]]>  
-		</Details>  
-	</BugPattern> 
-	<BugPattern type="INVALID_EQUAL_FUNCTION">  
-		<ShortDescription>Class defines wrong equals function</ShortDescription>  
-		<LongDescription>Class defines wrong equals function</LongDescription>  
-		<Details>  
-			<![CDATA[  
-			]]>  
-		</Details>  
+			]]>
+		</Details>
 	</BugPattern>
-	
+	<BugPattern type="MISS_NOT_EQUAL_FUNCTION">
+		<ShortDescription>Class defines ==() without !=()</ShortDescription>
+		<LongDescription>Class defines ==() without !=()</LongDescription>
+		<Details>  
+			<![CDATA[  
+			]]>
+		</Details>
+	</BugPattern>
+	<BugPattern type="INVALID_EQUAL_FUNCTION">
+		<ShortDescription>Class defines wrong equals function
+		</ShortDescription>
+		<LongDescription>Class defines wrong equals function</LongDescription>
+		<Details>  
+			<![CDATA[  
+			]]>
+		</Details>
+	</BugPattern>
+
 	<!-- #8 Zhijing Wu -->
-	<BugPattern type="STR_REPLACE_MIS">  
-	  <ShortDescription>string.replace(char,char) misuse</ShortDescription>  
-	  <LongDescription>string.replace(char,char) doesn't change the variable itself</LongDescription>  
-	  <Details>  
+	<BugPattern type="STR_REPLACE_MIS">
+		<ShortDescription>string.replace(char,char) misuse</ShortDescription>
+		<LongDescription>string.replace(char,char) doesn't change the variable
+			itself
+		</LongDescription>
+		<Details>  
 		  <![CDATA[  
 			<p>In <I>Programming in Scala</I>, 15.6</p>
 			<p>
 				string.replace(char,char)doesn't chang the variable itself,it only returns a new string value.So the use of it without a giving it to a new value
 				can be seen as a misuse of this funcion.It can always make an unexpected result.
 			</p>
-		  ]]>  
-	  </Details>  
+		  ]]>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #9 Ling Sun -->
 	<BugPattern type="QF_QUESTIONABLE_FOR_LOOP">
-    <ShortDescription>Complicated, subtle or wrong increment in for-loop </ShortDescription>
-    <LongDescription>Complicated, subtle or wrong increment in for-loop {1} </LongDescription>
-    <Details>
+		<ShortDescription>Complicated, subtle or wrong increment in for-loop
+		</ShortDescription>
+		<LongDescription>Complicated, subtle or wrong increment in for-loop
+			{1}
+		</LongDescription>
+		<Details>
 	<![CDATA[
    		<p>Are you sure this for loop is incrementing the correct variable?
    		It appears that another variable is being initialized and checked
    		by the for loop.
 		</p>
 	]]>
-    </Details>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #10 Mingrui Zhang -->
-	<BugPattern type="EMPTY_RANGE">  
-    <ShortDescription>Using "to" method with decreasing parameters</ShortDescription>  
-    <LongDescription>Using "to" method with decreasing parameters, check if it's a bug</LongDescription>  
-    <Details>  
+	<BugPattern type="EMPTY_RANGE">
+		<ShortDescription>Using "to" method with decreasing parameters
+		</ShortDescription>
+		<LongDescription>Using "to" method with decreasing parameters, check
+			if it's a bug
+		</LongDescription>
+		<Details>  
         <![CDATA[  
 		<p>In Scala language:</p>
 		<p><code>
@@ -510,10 +583,10 @@
 		<p><code>
 			-1 to -4 by -1 = Range(-1,-2,-3,-4)
 		</code></p>
-        ]]>  
-    </Details>  
+        ]]>
+		</Details>
 	</BugPattern>
-	
+
 	<!-- #11 Gang Zhang -->
 	<BugPattern type="GENERIC_MISUSED">
 		<ShortDescription>GENERIC_MISUSED </ShortDescription>
@@ -536,14 +609,48 @@
  	]]>
 		</Details>
 	</BugPattern>
-	
-	
-	
-	
+
+	<!-- #12 Mengping Li -->
+	<BugPattern type="MISS_HASHCODE_METHOD">
+		<ShortDescription>Miss orverride hashCode()</ShortDescription>
+		<LongDescription>Override method equals, but forgetto overrivide
+			hashCode()</LongDescription>
+		<Details>
+<![CDATA[  
+<p>Forgetting to override hashCode as well, to ensure that if a equals b then a.hashCode == b.hashCode (the reverse proposition need not be valid).</p>
+]]>
+		</Details>
+	</BugPattern>
+
+	<BugPattern type="MISS_EXCEPITON_HANDLER">
+		<ShortDescription>miss exception handler in actor</ShortDescription>
+		<LongDescription>miss exception handler in actor</LongDescription>
+		<Details>
+<![CDATA[ 
+</hr>
+<p><b>e.g.</b></p>
+<p>
+1.&nbsp;&nbsp;object A extends Actor {    <br/>
+2.&nbsp;&nbsp;&nbsp;&nbsp;def act() {    <br/>
+3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;react {    <br/>
+4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'hello =>    <br/>
+5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Exception("Error!")    <br/>
+6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}    <br/>
+7.&nbsp;&nbsp;&nbsp;&nbsp;}   <br/>
+8.&nbsp;&nbsp;}<br/>
+</p>
+]]>
+		</Details>
+	</BugPattern>
+
+
+
+
+
 	<!-- ************************* Bug Codes ***************************************** -->
 	<!-- common bug code -->
 	<BugCode abbrev="SCALA">Programming mistake in Scala</BugCode>
-	
+
 	<!-- #1 Qi Wang -->
 	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
 	<BugCode abbrev="TE">Type erasion</BugCode>
@@ -553,10 +660,10 @@
 	<BugCode abbrev="CO">Collection operation</BugCode>
 	<BugCode abbrev="EXPR">Expression</BugCode>
 	<BugCode abbrev="FC">Function call</BugCode>
-	
+
 	<!-- #2 Yudi Zheng -->
-	
-	
+
+
 	<!-- #3 Shunping Wang -->
 	<BugCode abbrev="SCALA_RV">Bad use of return value from method in scala
 	</BugCode>
@@ -564,26 +671,28 @@
 	</BugCode>
 	<BugCode abbrev="SCALA_Eq">Problems with implementation of equals()
 	</BugCode>
-	
+
 	<!-- #4 Shuang Qiu -->
 	<BugCode abbrev="PO">Object initialization out of order.</BugCode>
-	
+
 	<!-- #5 Zhenbang Liu -->
 	<BugCode abbrev="RPC1">Found RPC in scala</BugCode>
-	
+
 	<!-- #6 Tao Liu -->
-	
+
 	<!-- #7 Chang Liu -->
-	
+
 	<!-- #8 Zhijing Wu -->
-	
+
 	<!-- #9 Ling Sun -->
 	<BugCode abbrev="QF">Questionable for loops</BugCode>
-	
+
 	<!-- #10 Mingrui Zhang -->
-	
+
 	<!-- #11 Gang Zhang -->
 	<BugCode abbrev="MUG">GENERIC_MISUSED</BugCode>
 	<BugCode abbrev="EOD">EXCEPTION_ORDER_PROBLEM</BugCode>
-	
+
+	<!-- #12 Mengping Li -->
+
 </MessageCollection>
