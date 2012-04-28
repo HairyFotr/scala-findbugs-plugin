@@ -232,8 +232,10 @@
     </Details>
   </Detector>
 	
-
-
+	<!-- #14 Weicheng Yang -->
+	<Detector class="cn.edu.sjtu.se.weichengYang.detector.scala.FirstLetterLowerInMatchDetector">
+		<Details> </Details>
+	</Detector>
 
 
 
@@ -665,6 +667,14 @@
 ]]>
     </Details>
   </BugPattern>
+  
+	<!-- #14 Weicheng Yang -->
+	<BugPattern type="FIRST_LETTER_LOWER_IN_MATCH">
+		<ShortDescription>In match, first letter lowercase can match any type.</ShortDescription>
+		<LongDescription>In match, variable with first letter lowercase can match any type</LongDescription>
+		<Details>
+		</Details>
+	</BugPattern>  
 
 
 
@@ -720,6 +730,8 @@
 	<!-- #13 Dingkun Yang -->
 	<BugCode abbrev="S_MWD">Scala match without default</BugCode>
 	
+	<!-- #14 Weicheng Yang -->
+	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
 	
 
 </MessageCollection>
