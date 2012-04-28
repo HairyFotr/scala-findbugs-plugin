@@ -237,6 +237,14 @@
 		<Details> </Details>
 	</Detector>
 
+	<!-- #15 Puyu Duan -->
+	<Detector class="cn.edu.sjtu.se.puyuDuan.StrAndCharMethodConfusing">
+		<Details>
+			<![CDATA[
+            <p>Potential bug of confusing used method of Character</p>
+			]]>
+		</Details>
+	</Detector>
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -676,7 +684,16 @@
 		</Details>
 	</BugPattern>  
 
-
+	<!-- #15 Puyu Duan -->
+	<BugPattern type="METHOD_CONFUSING">  
+		<ShortDescription>Confusing used method of Character</ShortDescription>  
+		<LongDescription>May invoke Character's method which supposed to be String's, check if it is a mistake</LongDescription>  
+		<Details>  
+			<![CDATA[  
+			]]>  
+		</Details>  
+	</BugPattern>
+	
 
 
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -694,7 +711,6 @@
 	<BugCode abbrev="FC">Function call</BugCode>
 
 	<!-- #2 Yudi Zheng -->
-
 
 	<!-- #3 Shunping Wang -->
 	<BugCode abbrev="SCALA_RV">Bad use of return value from method in scala
@@ -733,5 +749,8 @@
 	<!-- #14 Weicheng Yang -->
 	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
 	
+	<!-- #15 Puyu Duan -->
+	
+		
 
 </MessageCollection>

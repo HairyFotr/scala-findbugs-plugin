@@ -74,6 +74,8 @@
 	<!-- #14 Weicheng Yang -->
 	<Detector class="cn.edu.sjtu.se.weichengYang.detector.scala.FirstLetterLowerInMatchDetector" reports="FIRST_LETTER_LOWER_IN_MATCH" />
 	
+	<!-- #15 Puyu Duan -->
+	<Detector class="cn.edu.sjtu.se.puyuDuan.StrAndCharMethodConfusing" speed="fast" reports="METHOD_CONFUSING" hidden="false" />
 	
 
 
@@ -148,6 +150,9 @@
 	
 	<!-- #14 Weicheng Yang -->
 	<BugPattern type="FIRST_LETTER_LOWER_IN_MATCH" abbrev="MAT" category="BAD_PRACTICE" />
+	
+	<!-- #15 Puyu Duan -->
+	<BugPattern abbrev="SCALA" type="METHOD_CONFUSING" category="CORRECTNESS" /> 
 	
 	 
 </FindbugsPlugin>
