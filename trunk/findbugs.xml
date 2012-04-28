@@ -41,6 +41,8 @@
 	<Detector class="cn.edu.sjtu.se.taoLiu.VarInHashCodeDetector"
         speed="fast" reports="VAR_IN_HASHCODE" hidden="false" />
 	
+	<!-- #7 Chang Liu -->
+	<Detector class="cn.edu.sjtu.se.changLiu.EquivalentJudgmentBugDetector" speed="fast" reports="MISS_HASHCODE_FUNCTION,MISS_NOT_EQUAL_FUNCTION,INVALID_EQUAL_FUNCTION" hidden="false" />
 	
 	
 
@@ -65,8 +67,8 @@
 	<BugPattern type="TYPE_ERASE_IN_MATCH" abbrev="TE" category="SCALA_VERSION_SEPCIFIC" />
 	
 	<!-- #2 Yudi Zheng -->
-	<BugPattern abbrev="SCALA_YUDI_ZHENG" type="UNREACHABLE" category="CORRECTNESS" />
-	<BugPattern abbrev="SCALA_YUDI_ZHENG" type="CASE_INHERIT" category="BAD_PRACTICE" />
+	<BugPattern abbrev="SCALA" type="UNREACHABLE" category="CORRECTNESS" />
+	<BugPattern abbrev="SCALA" type="CASE_INHERIT" category="BAD_PRACTICE" />
 	
 	<!-- #3 Shunping Wang -->
 	<BugPattern abbrev="SCALA_Co" type="SCALA_CO_COMPARETO_RESULTS_MIN_VALUE"
@@ -85,7 +87,11 @@
 	<BugPattern abbrev="RPC1" type="RpC_REPEATED_CONDITIONAL_TEST1" category="CORRECTNESS"  />
 	
 	<!-- #6 Tao Liu -->
-	<BugPattern abbrev="SCALA_TAO_LIU" type="VAR_IN_HASHCODE" category="BAD_PRACTICE" />
+	<BugPattern abbrev="SCALA" type="VAR_IN_HASHCODE" category="BAD_PRACTICE" />
 	
-	
+	<!-- #7 Chang Liu -->
+	<BugPattern abbrev="SCALA" type="MISS_HASHCODE_FUNCTION" category="BAD_PRACTICE" /> 
+	<BugPattern abbrev="SCALA" type="MISS_NOT_EQUAL_FUNCTION" category="BAD_PRACTICE" /> 
+	<BugPattern abbrev="SCALA" type="INVALID_EQUAL_FUNCTION" category="CORRECTNESS" /> 
 </FindbugsPlugin>
+	

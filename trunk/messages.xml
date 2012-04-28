@@ -120,6 +120,16 @@
 		]]>
 	</Details>
     </Detector> 
+    
+    <!-- #7 Chang Liu -->
+    <Detector class="cn.edu.sjtu.se.changLiu.EquivalentJudgmentBugDetector">
+		<Details>
+			<![CDATA[
+            <p>Potential bug of equivalent judgment.</p>
+			]]>
+		</Details>
+	</Detector>
+    
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -363,10 +373,38 @@
         ]]>
 	</Details>
 	</BugPattern>
-		
+	
+	<!-- #7 Chang Liu -->
+	<BugPattern type="MISS_HASHCODE_FUNCTION">  
+		<ShortDescription>Class defines equals() without hashCode()</ShortDescription>  
+		<LongDescription>Class defines equals() without hashCode()</LongDescription>  
+		<Details>  
+			<![CDATA[  
+			]]>  
+		</Details>  
+	</BugPattern> 
+	<BugPattern type="MISS_NOT_EQUAL_FUNCTION">  
+		<ShortDescription>Class defines ==() without !=()</ShortDescription>  
+		<LongDescription>Class defines ==() without !=()</LongDescription>  
+		<Details>  
+			<![CDATA[  
+			]]>  
+		</Details>  
+	</BugPattern> 
+	<BugPattern type="INVALID_EQUAL_FUNCTION">  
+		<ShortDescription>Class defines wrong equals function</ShortDescription>  
+		<LongDescription>Class defines wrong equals function</LongDescription>  
+		<Details>  
+			<![CDATA[  
+			]]>  
+		</Details>  
+	</BugPattern>
 	
 	
 	<!-- ************************* Bug Codes ***************************************** -->
+	<!-- common bug code -->
+	<BugCode abbrev="SCALA">Programming mistake in Scala</BugCode>
+	
 	<!-- #1 Qi Wang -->
 	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
 	<BugCode abbrev="TE">Type erasion</BugCode>
@@ -378,7 +416,7 @@
 	<BugCode abbrev="FC">Function call</BugCode>
 	
 	<!-- #2 Yudi Zheng -->
-	<BugCode abbrev="SCALA">Programming mistake in Scala</BugCode>
+	
 	
 	<!-- #3 Shunping Wang -->
 	<BugCode abbrev="SCALA_RV">Bad use of return value from method in scala
@@ -395,7 +433,8 @@
 	<BugCode abbrev="RPC1">Found RPC in scala</BugCode>
 	
 	<!-- #6 Tao Liu -->
-	<BugCode abbrev="SCALA_TAO_LIU">Programming mistake in Scala</BugCode>
+	
+	<!-- #7 Chang Liu -->
 	
 	
 </MessageCollection>
