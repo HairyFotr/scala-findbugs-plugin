@@ -8,7 +8,7 @@
 	
 	<!-- ************************* Detectors ***************************************** -->
 	
-	<!-- Qi Wang -->
+	<!-- #1 Qi Wang -->
 	<Detector class="cn.edu.sjtu.stap.detector.scala.WrongEqualsOrHashcodeDetector">
 		<Details></Details>
 	</Detector>
@@ -46,7 +46,7 @@
 		<Details> </Details>
 	</Detector>
 	
-	<!-- Yudi Zheng -->
+	<!-- #2 Yudi Zheng -->
 	<Detector class="cn.edu.sjtu.se.yudiZheng.UnreachableCodeDetector">
 		<Details>
 		<![CDATA[
@@ -62,11 +62,27 @@
 		</Details>
 	</Detector>
 	
+	<!-- #3 Shunping Wang -->
+	<Detector class="cn.edu.sjtu.se.shunpingWang.ScalaFindPuzzlers">
+		<Details>
+			<![CDATA[
+				<p> ScalaFindPuzzlers detect </p>
+			]]>
+    	</Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.se.shunpingWang.ScalaHEmismatch">
+		<Details>
+			<![CDATA[
+				<p> ScalaHEmismatch detect </p>
+			]]>
+		</Details>
+	</Detector>
+	
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
 	
-	<!-- Qi Wang -->
+	<!-- #1 Qi Wang -->
 	<BugPattern type="USE_IMMUT_COLLECTION_IN_LOOP">
 		<ShortDescription>在循环中对不可变容器添加元素</ShortDescription>
 		<LongDescription>在循环中对不可变容器添加元素</LongDescription>
@@ -170,7 +186,7 @@
 		</Details>
 	</BugPattern>
 	
-	<!-- Yudi Zheng -->
+	<!-- #2 Yudi Zheng -->
 	<BugPattern type="UNREACHABLE">
 		<ShortDescription> Unreachable code </ShortDescription>
 		<LongDescription> Unreachable code detected. </LongDescription>
@@ -179,11 +195,85 @@
 	<BugPattern type="CASE_INHERIT">
 		<ShortDescription> Case class inheritance </ShortDescription>
 		<LongDescription> A case class inherites another case class. </LongDescription>
-		<Details><![CDATA[<p>Case class inheritance will introduce buggy behavior. If you compare two instances from two case classes with a relationship of inheritance, they will definitely be different, while in some cases you expect a same result. ]]> </Details>
+		<Details>
+			<![CDATA[
+				<p>Case class inheritance will introduce buggy behavior. If you compare two instances from two case classes with a relationship of inheritance, they will definitely be different, 
+				while in some cases you expect a same result. </p> 
+			]]> 
+		</Details>
+	</BugPattern>
+	
+	<!-- #3 Shunping Wang -->
+	<BugPattern type="SCALA_CO_COMPARETO_RESULTS_MIN_VALUE">
+		<ShortDescription>compareTo()/compare() returns Integer.MIN_VALUE</ShortDescription>
+		<LongDescription>{1} returns Integer.MIN_VALUE, which can't be negated</LongDescription>
+		<Details>
+			<![CDATA[
+  			<p> In some situation, this compareTo or compare method returns 
+				the  constant Integer.MIN_VALUE, which is an exceptionally bad practice.
+  				The only thing that matters about the return value of compareTo is the sign of the result.
+    			But people will sometimes negate the return value of compareTo, expecting that this will negate
+    			the sign of the result. And it will, except in the case where the value returned is Integer.MIN_VALUE.
+    			So just return -1 rather than Integer.MIN_VALUE.
+    		</p>
+			]]>
+    </Details>
+	</BugPattern>
+	<BugPattern type="SCALA_RV_NEGATING_RESULT_OF_COMPARETO">
+		<ShortDescription>Negating the result of compareTo()/compare()</ShortDescription>
+		<LongDescription>{1} negates the return value of {2}</LongDescription>
+		<Details>
+			<![CDATA[
+  				<p> This code negatives the return value of a compareTo or compare method.
+					This is a questionable or bad programming practice, since if the return
+					value is Integer.MIN_VALUE, negating the return value won't
+					negate the sign of the result. You can achieve the same intended result
+					by reversing the order of the operands rather than by negating the results.
+				</p>
+			]]>
+    </Details>
+	</BugPattern>
+	<BugPattern type="SCALA_CO_COMPARETO_NON_INT_RETURN">
+		<ShortDescription>compareTo return none int</ShortDescription>
+		<LongDescription>{0} defines {1.givenClass} and return none int</LongDescription>
+		<Details>
+			<![CDATA[
+  				<p> method compareTo return value is not an int, change the method name to avoid missuderstanding
+				</p>
+			]]>
+	</Details>
+	</BugPattern>
+	<BugPattern type="SCALA_EQ_COMPARETO_USE_OBJECT_EQUALS">
+		<ShortDescription>Class defines compareTo(...) and uses Object.equals()</ShortDescription>
+		<LongDescription>{0} defines {1.givenClass} and uses Object.equals()</LongDescription>
+		<Details>
+			<![CDATA[
+  				<p> This class defines a <code>compareTo(...)</code> method but inherits its
+  					<code>equals()</code> method from <code>java.lang.Object</code>.
+    				Generally, the value of compareTo should return zero if and only if
+    				equals returns true. If this is violated, weird and unpredictable
+    				failures will occur in classes such as PriorityQueue.
+    				In Java 5 the PriorityQueue.remove method uses the compareTo method,
+    				while in Java 6 it uses the equals method.
+    			</p>
+
+				<p>From the JavaDoc for the compareTo method in the Comparable interface:
+					<blockquote>
+						It is strongly recommended, but not strictly required that <code>(x.compareTo(y)==0) == (x.equals(y))</code>.
+						Generally speaking, any class that implements the Comparable interface and violates this condition
+						should clearly indicate this fact. The recommended language
+						is "Note: this class has a natural ordering that is inconsistent with equals."
+					</blockquote>
+				</p>
+			]]>
+    </Details>
 	</BugPattern>
 	
 	
+	
+	
 	<!-- ************************* Bug Codes ***************************************** -->
+	<!-- #1 Qi Wang -->
 	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
 	<BugCode abbrev="TE">Type erasion</BugCode>
 	<BugCode abbrev="MAT">Pattern match</BugCode>
@@ -192,5 +282,17 @@
 	<BugCode abbrev="CO">Collection operation</BugCode>
 	<BugCode abbrev="EXPR">Expression</BugCode>
 	<BugCode abbrev="FC">Function call</BugCode>
+	
+	<!-- #2 Yudi Zheng -->
 	<BugCode abbrev="SCALA">Programming mistake in Scala</BugCode>
+	
+	<!-- #3 Shunping Wang -->
+	<BugCode abbrev="SCALA_RV">Bad use of return value from method in scala
+	</BugCode>
+	<BugCode abbrev="SCALA_Co">Problems with implementation of compareTo()
+	</BugCode>
+	<BugCode abbrev="SCALA_Eq">Problems with implementation of equals()
+	</BugCode>
+	
+	
 </MessageCollection>
