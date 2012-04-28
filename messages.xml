@@ -344,8 +344,17 @@
 		<p>It is a fast detector</p>
 		]]>
     </Details>
-
    </Detector>
+   
+   <!-- #26 Bo Li -->
+	<Detector class="cn.edu.sjtu.se.boLi.OverriddenMethodDetector">
+    <Details>
+<![CDATA[
+<p> The method’s content is exactly the same as its super class’s corresponding method. 
+	It is a Re-implemented Overridden Method pattern.  </p>
+]]>
+      </Details>
+  	</Detector>
 	
 	
 
@@ -1019,6 +1028,13 @@ is prefered.
 	</BugPattern>
 	
 	
+	<!-- #26 Bo Li -->
+	<BugPattern type="RE-IMPLEMENT_OVERRIDDEN">  
+		  <ShortDescription>Re-implement overridden method.</ShortDescription>  
+		  <LongDescription>Re-implement overridden method.</LongDescription>  
+		  <Details><p>The method’s content is exactly the same as its super class’s corresponding method. 
+	It is a Re-implemented Overridden Method pattern.</p></Details>
+	</BugPattern>
 	
 
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -1100,5 +1116,6 @@ is prefered.
 	<!-- #25 Xuye Qin -->
 	<BugCode abbrev="MRC">Method Returns Constant</BugCode>
 	
+	<!-- #26 Bo Li -->
 
 </MessageCollection>
