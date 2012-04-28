@@ -245,6 +245,27 @@
 			]]>
 		</Details>
 	</Detector>
+	
+	<!-- #16 Jun Wang -->
+	<Detector class="cn.edu.sjtu.se.junWang.ClassesInPackageObjectDetector">
+        <Details>
+<![CDATA[
+<p>Classes shoud not be defined in a package object.</p>
+]]>
+        </Details>
+    </Detector>
+    
+    <Detector class="cn.edu.sjtu.se.junWang.VarNotReassignedDetector">
+        <Details>
+<![CDATA[
+<p>var defined but never re-assigned.</p>
+]]>
+        </Details>
+    </Detector>
+	
+	
+	
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -694,6 +715,68 @@
 		</Details>  
 	</BugPattern>
 	
+	<!-- #16 Jun Wang -->
+	<BugPattern type="PACKAGE_OBJECT_MISUSE">
+        <ShortDescription>Classes defined in a package object
+        </ShortDescription>
+        <LongDescription>Classes defined in a package object. Move it
+            outside of the package object.
+        </LongDescription>
+        <Details>  
+          <![CDATA[  
+<p><I>https://issues.scala-lang.org/browse/SI-4344</I></p>
+<p>Bug <I>https://issues.scala-lang.org/browse/SI-3999</I></p>
+<p>In foo/bar/package.scala:</p>
+<p>
+package foo
+
+package object bar {
+  class Val(b: Boolean)
+  implicit def boolean2Val(b: Boolean) = new Val(b)
+}
+</p>
+<p>In foo/bar/A.scala:</p>
+<p>
+package foo.bar
+
+class A {
+  val s: Val = false
+}
+</p>
+<p>
+> scalac foo\bar\package.scala foo\bar\A.scala
+foo\bar\A.scala:4: error: type mismatch;
+ found   : Boolean(false)
+ required: foo.bar.package.Val
+Note that implicit conversions are not applicable because they are ambiguous:
+ both method boolean2Val in package bar of type (b: Boolean)foo.bar.package.Val
+ and method boolean2Val in package bar of type (b: Boolean)foo.bar.package.Val
+ are possible conversion functions from Boolean(false) to foo.bar.package.Val
+  val s: Val = false
+               ^
+one error found
+> scalac -version
+Scala compiler version 2.8.0.final -- Copyright 2002-2010, LAMP/EPFL
+</p>
+          ]]>
+        </Details>
+    </BugPattern>
+	
+	<BugPattern type="VAR_NOT_REASSIGNED">
+        <ShortDescription>var not reassigned
+        </ShortDescription>
+        <LongDescription>var defined but not reassigned.
+        </LongDescription>
+        <Details>  
+          <![CDATA[  
+
+          ]]>
+        </Details>
+    </BugPattern>
+	
+	
+		
+	
 
 
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -750,6 +833,8 @@
 	<BugCode abbrev="VCOMP">Value Comparison</BugCode>
 	
 	<!-- #15 Puyu Duan -->
+	
+	<!-- #16 Jun Wang -->
 	
 		
 

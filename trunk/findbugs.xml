@@ -77,6 +77,12 @@
 	<!-- #15 Puyu Duan -->
 	<Detector class="cn.edu.sjtu.se.puyuDuan.StrAndCharMethodConfusing" speed="fast" reports="METHOD_CONFUSING" hidden="false" />
 	
+	<!-- #16 Jun Wang -->
+	<Detector class="cn.edu.sjtu.se.junWang.ClassesInPackageObjectDetector"
+        speed="fast" reports="PACKAGE_OBJECT_MISUSE" hidden="false" />
+    <Detector class="cn.edu.sjtu.se.junWang.VarNotReassignedDetector"
+        speed="fast" reports="VAR_NOT_REASSIGNED" hidden="false" />
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -152,7 +158,13 @@
 	<BugPattern type="FIRST_LETTER_LOWER_IN_MATCH" abbrev="MAT" category="BAD_PRACTICE" />
 	
 	<!-- #15 Puyu Duan -->
-	<BugPattern abbrev="SCALA" type="METHOD_CONFUSING" category="CORRECTNESS" /> 
+	<BugPattern abbrev="SCALA" type="METHOD_CONFUSING" category="CORRECTNESS" />
+	
+	<!-- #16 Jun Wang -->
+	 <BugPattern abbrev="SCALA" type="PACKAGE_OBJECT_MISUSE"
+        category="BAD_PRACTICE" />
+    <BugPattern abbrev="SCALA" type="VAR_NOT_REASSIGNED"
+        category="BAD_PRACTICE" />
 	
 	 
 </FindbugsPlugin>
