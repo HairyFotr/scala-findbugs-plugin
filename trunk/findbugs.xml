@@ -66,6 +66,10 @@
 		reports="MISS_HASHCODE_METHOD" hidden="false" />
 	<Detector class="cn.edu.sjtu.se.mengpingLi.MissExceptionHandlerDetector" speed="fast" 
 		reports="MISS_EXCEPITON_HANDLER" hidden="false" />
+		
+	<!-- #13 Dingkun Yang -->
+	<Detector class="cn.edu.sjtu.se.dingkunYang.ScalaMatchWithoutDefault" speed="moderate"
+      		      reports="SCALA_MATCH_WITHOUT_DEFAULT" />
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -134,7 +138,8 @@
 	<BugPattern abbrev="SCALA" type="MISS_HASHCODE_METHOD" category="BAD_PRACTICE" />
 	<BugPattern abbrev="SCALA" type="MISS_EXCEPITON_HANDLER" category="BAD_PRACTICE" />
 		
-		
+	<!-- #13 Dingkun Yang -->
+	<BugPattern abbrev="S_MWD" type="SCALA_MATCH_WITHOUT_DEFAULT" category="CORRECTNESS" />
 	 
 </FindbugsPlugin>
 	

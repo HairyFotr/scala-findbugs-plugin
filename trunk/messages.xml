@@ -221,6 +221,17 @@
 	]]>
 		</Details>
 	</Detector>
+	
+	<!-- #13 Dingkun Yang -->
+	<Detector class="cn.edu.sjtu.se.dingkunYang.ScalaMatchWithoutDefault">
+    <Details>
+<![CDATA[
+<p>Only in Scala language, match-case block does not have the default case.
+</p>
+]]>
+    </Details>
+  </Detector>
+	
 
 
 
@@ -644,6 +655,17 @@
 	</BugPattern>
 
 
+	<!-- #13 Dingkun Yang -->
+	<BugPattern type="SCALA_MATCH_WITHOUT_DEFAULT">
+    <ShortDescription>Scala Match without default</ShortDescription>
+    <LongDescription>Only in Scala language, match-case block does not have the default case.</LongDescription>
+    <Details>
+<![CDATA[
+<p> Only in Scala language, match-case block does not have the default case. If an unintialized variable is directly valued by the result of this block, an error might emerge. </p>
+]]>
+    </Details>
+  </BugPattern>
+
 
 
 
@@ -694,5 +716,10 @@
 	<BugCode abbrev="EOD">EXCEPTION_ORDER_PROBLEM</BugCode>
 
 	<!-- #12 Mengping Li -->
+	
+	<!-- #13 Dingkun Yang -->
+	<BugCode abbrev="S_MWD">Scala match without default</BugCode>
+	
+	
 
 </MessageCollection>
