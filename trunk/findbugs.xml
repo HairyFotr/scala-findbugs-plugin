@@ -1,6 +1,6 @@
 <FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="findbugsplugin.xsd" pluginid="cn.edu.sjtu.stap.wq"
-	provider="STAP wq" website="http://stap.sjtu.edu.cn">
+	provider="SE@SJTU" website="http://se.sjtu.edu.cn">
 	
 	<!-- ************************* Detectors ***************************************** -->
 	<!-- #1 Qi Wang -->
