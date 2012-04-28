@@ -47,7 +47,9 @@
 	<!-- #8 Zhijing Wu -->
 	<Detector class="cn.edu.sjtu.se.zhijingWu.StrReplaceDetector" speed="fast" reports="STR_REPLACE_MIS" hidden="false" />
 	
-	
+	<!-- #9 Ling Sun -->
+	<Detector class="cn.edu.sjtu.se.lingSun.FindBadForLoopScala" speed="fast"
+		reports="QF_QUESTIONABLE_FOR_LOOP"/>
 
 	<!-- ************************* Bug Patterns ***************************************** -->
 	<!-- #1 Qi Wang -->
@@ -99,6 +101,9 @@
 	
 	<!-- #8 Zhijing Wu -->
 	<BugPattern abbrev="SCALA" type="STR_REPLACE_MIS" category="CORRECTNESS" />
+	
+	<!-- #9 Ling Sun -->
+	<BugPattern abbrev="QF" type="QF_QUESTIONABLE_FOR_LOOP" category="STYLE"/>
 	 
 </FindbugsPlugin>
 	
