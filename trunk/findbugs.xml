@@ -111,6 +111,10 @@
 	<!-- #25 Xuye Qin -->
 	<Detector class="cn.edu.sjtu.se.xuyeQin.MethodReturnsConstantDetector" speed="fast" reports="MRC_METHOD_RETURNS_CONSTANT" />
 	
+	<!-- #26 Bo Li -->
+	<Detector class="cn.edu.sjtu.se.boLi.OverriddenMethodDetector" speed="fast" 
+          					reports="RE-IMPLEMENT_OVERRIDDEN"/>
+	
 	
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -223,6 +227,9 @@
 	
 	<!-- #25 Xuye Qin -->
 	<BugPattern abbrev="MRC" type="MRC_METHOD_RETURNS_CONSTANT" category="STYLE" />
+	
+	<!-- #26 Bo Li -->
+	<BugPattern abbrev="SCALA" type="RE-IMPLEMENT_OVERRIDDEN" category="BAD_PRACTICE" />
 	
 	 
 </FindbugsPlugin>
