@@ -99,6 +99,9 @@
 	<!-- #21 Zheng Wang-->
 	<Detector class="cn.edu.sjtu.se.zhengWang.StoreBeforeReturnDetector" speed="fast" reports="STORE_BEFORE_RETURN" hidden="false" />
 	
+	<!-- #22 Xi Jia -->
+	<Detector class="cn.edu.sjtu.se.xiJia.CheckImplicitDetector" speed="fast" reports="IMPLICIT_MISUSE" hidden="false" />
+	
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -199,6 +202,9 @@
 	
 	<!-- #21 Zheng Wang-->
 	<BugPattern abbrev="SCALA" type="STORE_BEFORE_RETURN" category="BAD_PRACTICE" />
+	
+	<!-- #22 Xi Jia -->
+	<BugPattern abbrev="SCALA" type="IMPLICIT_MISUSE" category="CORRECTNESS" />
 	
 	
 	 
