@@ -158,6 +158,24 @@
     </Details>
 	</Detector>
 	
+	<!-- #11 Gang Zhang -->
+	<Detector class="cn.edu.sjtu.se.gangZhang.MethodUseGenericDetect">
+		<Details> 
+ 	<![CDATA[ 
+ 		<p> This detector finds methods misuse generic type to process type matching,but generic type 
+ 		will be erased during the compiling.
+ 	]]>
+		</Details>
+	</Detector>
+	<Detector class="cn.edu.sjtu.se.gangZhang.ExceptionOrderDetect">
+		<Details> 
+ 	<![CDATA[ 
+ 		<p> This detector finds try-catch module in which there exist many exceptions to be caught
+ 		but exceptions order and exceptions class Hierarchy are ignored by mistake. 
+ 	]]>
+		</Details>
+	</Detector>
+	
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -496,6 +514,29 @@
     </Details>  
 	</BugPattern>
 	
+	<!-- #11 Gang Zhang -->
+	<BugPattern type="GENERIC_MISUSED">
+		<ShortDescription>GENERIC_MISUSED </ShortDescription>
+		<LongDescription>GENERIC_MISUSED</LongDescription>
+		<Details> 
+ 	<![CDATA[ 
+ 		<p> This detector finds methods misuse generic type to process type matching,but generic type 
+ 		will be erased during the compiling.
+ 	]]>
+		</Details>
+	</BugPattern>
+
+	<BugPattern type="EXCEPTION_ORDER_PROBLEM">
+		<ShortDescription>EXCEPTION_ORDER_PROBLEM </ShortDescription>
+		<LongDescription>EXCEPTION_ORDER_PROBLEM</LongDescription>
+		<Details> 
+ 	<![CDATA[ 
+ 		<p> This detector finds try-catch module in which there exist many exceptions to be caught
+ 		but exceptions order and exceptions class Hierarchy are ignored by mistake. 
+ 	]]>
+		</Details>
+	</BugPattern>
+	
 	
 	
 	
@@ -540,5 +581,9 @@
 	<BugCode abbrev="QF">Questionable for loops</BugCode>
 	
 	<!-- #10 Mingrui Zhang -->
+	
+	<!-- #11 Gang Zhang -->
+	<BugCode abbrev="MUG">GENERIC_MISUSED</BugCode>
+	<BugCode abbrev="EOD">EXCEPTION_ORDER_PROBLEM</BugCode>
 	
 </MessageCollection>

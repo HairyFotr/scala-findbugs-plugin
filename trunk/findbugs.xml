@@ -54,7 +54,12 @@
 	<!-- #10 Mingrui Zhang -->
 	<Detector class="cn.edu.sjtu.se.mingruiZhang.EmptyRangeDetector" speed="fast"
 		reports="EMPTY_RANGE" hidden="false" />
-
+		
+	<!-- #11 Gang Zhang -->
+	<Detector class="cn.edu.sjtu.se.gangZhang.MethodUseGenericDetect"
+		speed="fast" reports="GENERIC_MISUSED"/>
+	<Detector class="cn.edu.sjtu.se.gangZhang.ExceptionOrderDetect"
+		speed="fast" reports="EXCEPTION_ORDER_PROBLEM"/>
 
 
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -114,7 +119,11 @@
 	<!-- #10 Mingrui Zhang -->
 	<BugPattern abbrev="SCALA" type="EMPTY_RANGE" category="CORRECTNESS" />
 	 
-	 
+	<!-- #11 Gang Zhang -->
+	<BugPattern abbrev="MUG" type="GENERIC_MISUSED" category="CORRECTNESS" />
+	<BugPattern abbrev="EOD" type="EXCEPTION_ORDER_PROBLEM"
+		category="CORRECTNESS" />
+		
 	 
 </FindbugsPlugin>
 	
