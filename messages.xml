@@ -102,6 +102,15 @@
 			]]>
     	</Details>
   </Detector>
+  
+  <!-- #5 Zhenbang Liu -->
+   <Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"> 
+    <Details> 
+ 		<![CDATA[ 
+ 			<p>This detector looks for repeated conditional test in scala.</p>
+ 		]]> 
+    </Details> 
+  </Detector> 
 	
 	
 	<!-- ************************* Bug Patterns ***************************************** -->
@@ -317,10 +326,22 @@
 		Now the test code <code> Sub s = new Sub(); </code> constructor of <code>Base</code> will in fact invoke <code>foo()</code> of class <code>Sub</code> though object <code>s</code> is partially initialized.
 		</p>
 	]]>
+	</Details>
+	</BugPattern>
+	
+	<!-- #5 Zhenbang Liu -->
+	<BugPattern type="RpC_REPEATED_CONDITIONAL_TEST1">
+    <ShortDescription> repeated condition tests in scala
+	</ShortDescription>
+	<LongDescription>condition {2} repeated with {1}
+	</LongDescription>
+    <Details>
+	<![CDATA[
+		<p> In scala This method repeated conditional tests .  Make sure that you are comparing the right things.
+		</p>
+	]]>
     </Details>
-  </BugPattern>
-	
-	
+  </BugPattern>	
 	
 	
 	<!-- ************************* Bug Codes ***************************************** -->
@@ -345,8 +366,11 @@
 	<BugCode abbrev="SCALA_Eq">Problems with implementation of equals()
 	</BugCode>
 	
-	<!-- Shuang Qiu -->
+	<!-- #4 Shuang Qiu -->
 	<BugCode abbrev="PO">Object initialization out of order.</BugCode>
+	
+	<!-- #5 Zhenbang Liu -->
+	<BugCode abbrev="RPC1">Found RPC in scala</BugCode>
 	
 	
 </MessageCollection>

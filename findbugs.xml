@@ -33,6 +33,9 @@
 	<Detector class="cn.edu.sjtu.se.shuangQiu.PartialInitializedObjectDetector" speed="fast"
 		reports="PartialInitialized" />
   
+  <!-- #5 Zhenbang Liu -->
+  <Detector class="cn.edu.sjtu.se.zhenbangLiu.CheckRepeatedCondition"  hidden="false"
+     reports="RpC_REPEATED_CONDITIONAL_TEST1" />
 	
 	
 	
@@ -73,6 +76,9 @@
 		
 	<!-- #4 Qiu Shuang -->
 	<BugPattern abbrev="PO" type="PartialInitialized" category="STYLE" />
+	
+	<!-- #5 Zhenbang Liu -->
+	<BugPattern abbrev="RPC1" type="RpC_REPEATED_CONDITIONAL_TEST1" category="CORRECTNESS"  />
 	
 	
 </FindbugsPlugin>
